@@ -39,12 +39,17 @@ header {
 
 header h1 {
     font-family: 'Dancing Script';
+<<<<<<< HEAD
     font-size: 5vw;
+=======
+    font-size: 4vw;
+>>>>>>> 515d0669bb5299271681a2079bf91bbfd969b536
     /* padding:13vh 0 5vh; */
 }
 
 header ul {
     display: flex;
+<<<<<<< HEAD
 }
 
 header li {
@@ -55,4 +60,11 @@ header li {
 header li a {
     color: black;
     font-weight: normal;
+=======
+}
+
+header li {
+    font-size: 1.3vw;
+    padding: 0 1.3vw;
+>>>>>>> 515d0669bb5299271681a2079bf91bbfd969b536
 }
