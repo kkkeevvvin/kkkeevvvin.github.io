@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>隨筆 on blo.blo.blog</title>
-    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/categories/%E9%9A%A8%E7%AD%86/</link>
-    <description>Recent content in 隨筆 on blo.blo.blog</description>
+    <title>Bug on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/bug/</link>
+    <description>Recent content in Bug on blo.blo.blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Wed, 18 Oct 2023 16:21:54 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/categories/%E9%9A%A8%E7%AD%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Oct 2023 16:21:54 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/bug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[隨筆] 把舊網站重新上線</title>
       <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/</link>
@@ -18,22 +18,6 @@
 另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔
 &amp;hellip;
 最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用Monkeytype  和keybr  練習打字，也有找到 Microsoft 的課程Web-Dev-For-Beginners  其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。</description>
-    </item>
-    
-    <item>
-      <title>[隨筆] 過了好久好久...</title>
-      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/</link>
-      <pubDate>Tue, 17 Oct 2023 19:43:47 +0800</pubDate>
-      
-      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/</guid>
-      <description>從上次更新到寫這篇文章的當下，已經不知不覺地過了兩年。
-之間發生了好多事。
-&amp;hellip;
-因為已經把這個 repo 的 github page 拿掉，差點忘了怎麼 run 他的 server。
-最近在 codecademy 選了 Full-stack Engineer Path 學學前後端，想到自己曾經做過這個東西，也覺得應該要寫點筆記，既然要寫就想說寫好一點順便放在個人網站以後當履歷 XD
-&amp;hellip;
-嘗試了一下，發現不知道為什麼沒有辦法生成靜態網頁。
-那就先當作是我的記事本吧~~ 剩下的有空再說！</description>
     </item>
     
   </channel>

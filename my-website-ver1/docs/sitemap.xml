@@ -2,19 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/</loc>
-    <lastmod>2023-10-17T19:43:47+08:00</lastmod>
+    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/</loc>
+    <lastmod>2023-10-18T16:21:54+08:00</lastmod>
   </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/</loc>
-    <lastmod>2023-10-17T19:43:47+08:00</lastmod>
+    <lastmod>2023-10-18T16:21:54+08:00</lastmod>
+  </url><url>
+    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/bug/</loc>
+    <lastmod>2023-10-18T16:21:54+08:00</lastmod>
+  </url><url>
+    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/github-page/</loc>
+    <lastmod>2023-10-18T16:21:54+08:00</lastmod>
+  </url><url>
+    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/hugo/</loc>
+    <lastmod>2023-10-18T16:21:54+08:00</lastmod>
   </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/</loc>
-    <lastmod>2023-10-17T19:43:47+08:00</lastmod>
+    <lastmod>2023-10-18T16:21:54+08:00</lastmod>
   </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/categories/</loc>
-    <lastmod>2023-10-17T19:43:47+08:00</lastmod>
+    <lastmod>2023-10-18T16:21:54+08:00</lastmod>
+  </url><url>
+    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/</loc>
+    <lastmod>2023-10-18T16:21:54+08:00</lastmod>
   </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/categories/%E9%9A%A8%E7%AD%86/</loc>
+    <lastmod>2023-10-18T16:21:54+08:00</lastmod>
+  </url><url>
+    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/</loc>
     <lastmod>2023-10-17T19:43:47+08:00</lastmod>
   </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/intro_cli/</loc>
@@ -38,9 +53,6 @@
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/categories/%E5%85%A5%E9%96%80/</loc>
     <lastmod>2021-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/</loc>
-    <lastmod>2021-09-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/categories/%E9%81%8A%E6%88%B2/</loc>
     <lastmod>2021-09-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -48,9 +60,6 @@
     <lastmod>2021-09-06T11:15:28+08:00</lastmod>
   </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/graphcomment/</loc>
-    <lastmod>2021-09-06T11:15:28+08:00</lastmod>
-  </url><url>
-    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/hugo/</loc>
     <lastmod>2021-09-06T11:15:28+08:00</lastmod>
   </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/categories/%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99/</loc>
@@ -108,9 +117,6 @@
     <lastmod>2021-08-04T09:14:28+08:00</lastmod>
   </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/github/</loc>
-    <lastmod>2021-08-04T09:14:28+08:00</lastmod>
-  </url><url>
-    <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/github-page/</loc>
     <lastmod>2021-08-04T09:14:28+08:00</lastmod>
   </url><url>
     <loc>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/</loc>

@@ -5,18 +5,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>[隨筆] 過了好久好久... | blo.blo.blog</title>
-<meta name="keywords" content="" />
-<meta name="description" content="從上次更新到寫這篇文章的當下，已經不知不覺地過了兩年。
-之間發生了好多事。
+<title>[隨筆] 把舊網站重新上線 | blo.blo.blog</title>
+<meta name="keywords" content="Github Page, Hugo, Bug" />
+<meta name="description" content="昨天  嘗試了把這個舊網站重新上線未果。
+今天花了不少時間終於發現問題了！因為使用hugo指令產生靜態網頁的結果之間的超連結都會以發布的網址最為 baseURL，所以在本機端只能利用hugo server指令預覽結果。
+另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔
 &hellip;
-因為已經把這個 repo 的 github page 拿掉，差點忘了怎麼 run 他的 server。
-最近在 codecademy 選了 Full-stack Engineer Path 學學前後端，想到自己曾經做過這個東西，也覺得應該要寫點筆記，既然要寫就想說寫好一點順便放在個人網站以後當履歷 XD
-&hellip;
-嘗試了一下，發現不知道為什麼沒有辦法生成靜態網頁。
-那就先當作是我的記事本吧~~ 剩下的有空再說！">
+最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用Monkeytype  和keybr  練習打字，也有找到 Microsoft 的課程Web-Dev-For-Beginners  其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。">
 <meta name="author" content="blo.blo.blog">
-<link rel="canonical" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/" />
+<link rel="canonical" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/" />
 <link crossorigin="anonymous" href="/my-website-ver1/docs/assets/css/stylesheet.min.3a6c8052826ab2d4dd1b3ee36b1885b46a691f0d12eca3b920bd30aed9fba791.css" integrity="sha256-OmyAUoJqstTdGz7jaxiFtGppHw0S7KO5IL0wrtn7p5E=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/my-website-ver1/docs/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -39,30 +36,24 @@ if (!doNotTrack) {
 	gtag('config', 'G-YNNJDS4LLV', { 'anonymize_ip': false });
 }
 </script>
-<meta property="og:title" content="[隨筆] 過了好久好久..." />
-<meta property="og:description" content="從上次更新到寫這篇文章的當下，已經不知不覺地過了兩年。
-之間發生了好多事。
+<meta property="og:title" content="[隨筆] 把舊網站重新上線" />
+<meta property="og:description" content="昨天  嘗試了把這個舊網站重新上線未果。
+今天花了不少時間終於發現問題了！因為使用hugo指令產生靜態網頁的結果之間的超連結都會以發布的網址最為 baseURL，所以在本機端只能利用hugo server指令預覽結果。
+另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔
 &hellip;
-因為已經把這個 repo 的 github page 拿掉，差點忘了怎麼 run 他的 server。
-最近在 codecademy 選了 Full-stack Engineer Path 學學前後端，想到自己曾經做過這個東西，也覺得應該要寫點筆記，既然要寫就想說寫好一點順便放在個人網站以後當履歷 XD
-&hellip;
-嘗試了一下，發現不知道為什麼沒有辦法生成靜態網頁。
-那就先當作是我的記事本吧~~ 剩下的有空再說！" />
+最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用Monkeytype  和keybr  練習打字，也有找到 Microsoft 的課程Web-Dev-For-Beginners  其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-10-17T19:43:47&#43;08:00" />
-<meta property="article:modified_time" content="2023-10-17T19:43:47&#43;08:00" />
+<meta property="og:url" content="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-18T16:21:54&#43;08:00" />
+<meta property="article:modified_time" content="2023-10-18T16:21:54&#43;08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[隨筆] 過了好久好久..."/>
-<meta name="twitter:description" content="從上次更新到寫這篇文章的當下，已經不知不覺地過了兩年。
-之間發生了好多事。
+<meta name="twitter:title" content="[隨筆] 把舊網站重新上線"/>
+<meta name="twitter:description" content="昨天  嘗試了把這個舊網站重新上線未果。
+今天花了不少時間終於發現問題了！因為使用hugo指令產生靜態網頁的結果之間的超連結都會以發布的網址最為 baseURL，所以在本機端只能利用hugo server指令預覽結果。
+另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔
 &hellip;
-因為已經把這個 repo 的 github page 拿掉，差點忘了怎麼 run 他的 server。
-最近在 codecademy 選了 Full-stack Engineer Path 學學前後端，想到自己曾經做過這個東西，也覺得應該要寫點筆記，既然要寫就想說寫好一點順便放在個人網站以後當履歷 XD
-&hellip;
-嘗試了一下，發現不知道為什麼沒有辦法生成靜態網頁。
-那就先當作是我的記事本吧~~ 剩下的有空再說！"/>
+最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用Monkeytype  和keybr  練習打字，也有找到 Microsoft 的課程Web-Dev-For-Beginners  其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。"/>
 
 
 <script type="application/ld+json">
@@ -79,8 +70,8 @@ if (!doNotTrack) {
     {
       "@type": "ListItem",
       "position":  3 ,
-      "name": "[隨筆] 過了好久好久...",
-      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/"
+      "name": "[隨筆] 把舊網站重新上線",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/"
     }
   ]
 }
@@ -89,24 +80,24 @@ if (!doNotTrack) {
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[隨筆] 過了好久好久...",
-  "name": "[隨筆] 過了好久好久...",
-  "description": "從上次更新到寫這篇文章的當下，已經不知不覺地過了兩年。\n之間發生了好多事。\n\u0026hellip;\n因為已經把這個 repo 的 github page 拿掉，差點忘了怎麼 run 他的 server。\n最近在 codecademy 選了 Full-stack Engineer Path 學學前後端，想到自己曾經做過這個東西，也覺得應該要寫點筆記，既然要寫就想說寫好一點順便放在個人網站以後當履歷 XD\n\u0026hellip;\n嘗試了一下，發現不知道為什麼沒有辦法生成靜態網頁。\n那就先當作是我的記事本吧~~ 剩下的有空再說！",
+  "headline": "[隨筆] 把舊網站重新上線",
+  "name": "[隨筆] 把舊網站重新上線",
+  "description": "昨天  嘗試了把這個舊網站重新上線未果。\n今天花了不少時間終於發現問題了！因為使用hugo指令產生靜態網頁的結果之間的超連結都會以發布的網址最為 baseURL，所以在本機端只能利用hugo server指令預覽結果。\n另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔\n\u0026hellip;\n最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用Monkeytype  和keybr  練習打字，也有找到 Microsoft 的課程Web-Dev-For-Beginners  其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。",
   "keywords": [
-    ""
+    "Github Page", "Hugo", "Bug"
   ],
-  "articleBody": "從上次更新到寫這篇文章的當下，已經不知不覺地過了兩年。\n之間發生了好多事。\n…\n因為已經把這個 repo 的 github page 拿掉，差點忘了怎麼 run 他的 server。\n最近在 codecademy 選了 Full-stack Engineer Path 學學前後端，想到自己曾經做過這個東西，也覺得應該要寫點筆記，既然要寫就想說寫好一點順便放在個人網站以後當履歷 XD\n…\n嘗試了一下，發現不知道為什麼沒有辦法生成靜態網頁。\n那就先當作是我的記事本吧~~ 剩下的有空再說！\n",
-  "wordCount" : "24",
+  "articleBody": "昨天  嘗試了把這個舊網站重新上線未果。\n今天花了不少時間終於發現問題了！因為使用hugo指令產生靜態網頁的結果之間的超連結都會以發布的網址最為 baseURL，所以在本機端只能利用hugo server指令預覽結果。\n另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔\n…\n最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用Monkeytype  和keybr  練習打字，也有找到 Microsoft 的課程Web-Dev-For-Beginners  其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。\n",
+  "wordCount" : "35",
   "inLanguage": "zh-hant",
-  "datePublished": "2023-10-17T19:43:47+08:00",
-  "dateModified": "2023-10-17T19:43:47+08:00",
+  "datePublished": "2023-10-18T16:21:54+08:00",
+  "dateModified": "2023-10-18T16:21:54+08:00",
   "author":{
     "@type": "Person",
     "name": "blo.blo.blog"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/"
+    "@id": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/"
   },
   "publisher": {
     "@type": "Organization",
@@ -199,39 +190,61 @@ if (!doNotTrack) {
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://kkkeevvvin.github.io/my-website-ver1/docs">Home</a>&nbsp;»&nbsp;<a href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/">Posts</a></div>
     <h1 class="post-title">
-      [隨筆] 過了好久好久...
+      [隨筆] 把舊網站重新上線
     </h1>
-    <div class="post-meta">October 17, 2023&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog
+    <div class="post-meta">October 18, 2023&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog
 </div>
   </header> 
 
-  <div class="post-content"><p>從上次更新到寫這篇文章的當下，已經不知不覺地過了兩年。</p>
-<p>之間發生了好多事。</p>
+  <div class="post-content"><p><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/"
+   
+   >
+    昨天
+</a>
+
+嘗試了把這個舊網站重新上線未果。</p>
+<p>今天花了不少時間終於發現問題了！因為使用<code>hugo</code>指令產生靜態網頁的結果之間的超連結都會以發布的網址最為 baseURL，所以在本機端只能利用<code>hugo server</code>指令預覽結果。</p>
+<p>另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔</p>
 <p>&hellip;</p>
-<p>因為已經把這個 repo 的 github page 拿掉，差點忘了怎麼 run 他的 server。</p>
-<p>最近在 codecademy 選了 Full-stack Engineer Path 學學前後端，想到自己曾經做過這個東西，也覺得應該要寫點筆記，既然要寫就想說寫好一點順便放在個人網站以後當履歷 XD</p>
-<p>&hellip;</p>
-<p>嘗試了一下，發現不知道為什麼沒有辦法生成靜態網頁。</p>
-<p>那就先當作是我的記事本吧~~ 剩下的有空再說！</p>
+<p>最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用<a href="https://monkeytype.com/"
+   
+   
+   target="_blank"rel="noopener">
+    Monkeytype
+</a>
+
+和<a href="https://www.keybr.com/"
+   
+   
+   target="_blank"rel="noopener">
+    keybr
+</a>
+
+練習打字，也有找到 Microsoft 的課程<a href="https://github.com/microsoft/Web-Dev-For-Beginners"
+   
+   
+   target="_blank"rel="noopener">
+    Web-Dev-For-Beginners
+</a>
+
+其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。</p>
 
 
     
-<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/kkkevin/button?referrer=https%3a%2f%2fkkkeevvvin.github.io%2fmy-website-ver1%2fdocs%2fposts%2fafter-a-long-time%2f" width="100%" frameborder=0></iframe>
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/kkkevin/button?referrer=https%3a%2f%2fkkkeevvvin.github.io%2fmy-website-ver1%2fdocs%2fposts%2frepublish-old-web%2f" width="100%" frameborder=0></iframe>
 
   </div>
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/github-page/">Github Page</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/hugo/">Hugo</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/bug/">Bug</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/">
-    <span class="title">« </span>
-    <br>
-    <span>[隨筆] 把舊網站重新上線</span>
-  </a>
-  <a class="next" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/intro_cli/">
+  <a class="next" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/">
     <span class="title"> »</span>
     <br>
-    <span>[入門] 圖形使用者界面與命令列界面</span>
+    <span>[隨筆] 過了好久好久...</span>
   </a>
 </nav>
 
@@ -247,7 +260,7 @@ if (!doNotTrack) {
 
     behaviour: {
       
-      uid: "/my-website-ver1/docs/posts/after-a-long-time/", 
+      uid: "/my-website-ver1/docs/posts/republish-old-web/", 
       telemetricThroughCmp: true
     },
 

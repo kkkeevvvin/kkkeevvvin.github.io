@@ -6,7 +6,20 @@
     <description>Recent content in Posts on blo.blo.blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Tue, 17 Oct 2023 19:43:47 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Oct 2023 16:21:54 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[隨筆] 把舊網站重新上線</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/</link>
+      <pubDate>Wed, 18 Oct 2023 16:21:54 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/</guid>
+      <description>昨天  嘗試了把這個舊網站重新上線未果。
+今天花了不少時間終於發現問題了！因為使用hugo指令產生靜態網頁的結果之間的超連結都會以發布的網址最為 baseURL，所以在本機端只能利用hugo server指令預覽結果。
+另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔
+&amp;hellip;
+最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用Monkeytype  和keybr  練習打字，也有找到 Microsoft 的課程Web-Dev-For-Beginners  其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。</description>
+    </item>
+    
     <item>
       <title>[隨筆] 過了好久好久...</title>
       <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/</link>
@@ -179,27 +192,20 @@ likerID = &amp;quot;&amp;lt;your liker id&amp;gt;&amp;quot; 接著編輯文章�
       <pubDate>Wed, 04 Aug 2021 09:14:28 +0800</pubDate>
       
       <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/</guid>
-      <description>建立Github repository 登入Github的網頁，右上角會看到：
+      <description>建立 Github repository 登入 Github 的網頁，右上角會看到：
 點擊加號，再點擊New repository：
 出現建立的表單：
-如果是要作為主要的個人網站，Repository name建議可以使用&amp;lt;USERNAME&amp;gt;.github.io。如果你的github repo是命名成&amp;lt;USERNAME&amp;gt;.github.io的話，你的網頁就會發布在&amp;lt;USERNAME&amp;gt;.github.io；如果不是，會在&amp;lt;USERNAME&amp;gt;.github.io/&amp;lt;your_repo&amp;gt;
-勾選Public，只有付費版本可以用Private的repository來建立Github Page。其餘的選項可以自行決定。
+如果是要作為主要的個人網站，Repository name 建議可以使用&amp;lt;USERNAME&amp;gt;.github.io。如果你的 github repo 是命名成&amp;lt;USERNAME&amp;gt;.github.io的話，你的網頁就會發布在&amp;lt;USERNAME&amp;gt;.github.io；如果不是，會在&amp;lt;USERNAME&amp;gt;.github.io/&amp;lt;your_repo&amp;gt;
+勾選Public，只有付費版本可以用Private的 repository 來建立 Github Page。其餘的選項可以自行決定。
 最後按下Create repository。
-上傳到Github repository 如果沒有使用過git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的git設定。
-這裡以hugo專案預設的存檔路徑./public為例。
-移動到public底下，開始用git管理這個資料夾：
+上傳到 Github repository 如果沒有使用過 git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的 git 設定。
+這裡以 hugo 專案預設的存檔路徑./public為例。
+移動到public底下，開始用 git 管理這個資料夾：
 git init 將所有檔案加入管理：
 git add . 提交修改：
-git commit -m &amp;quot;first commit&amp;quot; 連上自己的github repo，並且做確認：
+git commit -m &amp;quot;first commit&amp;quot; 連上自己的 github repo，並且做確認：
 git remote add origin https://github.com/&amp;lt;USERNAME&amp;gt;/&amp;lt;your_repo&amp;gt;.git git remote -v 強制把現在的branch變成main。
-git branch -M main 然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。
-commit之後就可以push到你的Github了。
-查看你的網頁 在完成上面的內容以後，打開你的repo的設定：
-在左邊的欄位中找到Pages：
-會出現綠色提示框：
-如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟hugo server產生一樣的網頁了（可能要等伺服器更新）。
-之後 如果有更動，回到專案目錄用hugo產生好網頁，接著到GitHub Desktop一樣是用commit和push就可以了。
-參考文件： Build a Personal Website With Github Pages and Hugo  git &amp;amp;ndash;local-branching-on-the-cheap  Adding an existing project to GitHub using the command line  </description>
+git branch -M main 然後安裝並登入 GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。</description>
     </item>
     
     <item>

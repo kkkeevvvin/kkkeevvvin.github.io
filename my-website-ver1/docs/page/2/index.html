@@ -133,6 +133,20 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Hugo網站的向外連結</h2>
+  </header>
+  <section class="entry-content">
+    <p>前言 網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。
+Hugo link模板 Hugo渲染link的模板在：
+./layouts/_default/markup/render-link.html 如果沒有，自己新增一個就可以了。在裡面加上：
+&lt;a href=&#34;{{ .Destination | safeURL }}&#34; {{ with .Title}} title=&#34;{{ . }}&#34; {{ end }} {{ if strings.HasPrefix .Destination &#34;http&#34; }} target=&#34;_blank&#34; {{- /* 在新分頁中開啟連結 */ -}} rel=&#34;noopener&#34; {{- /* 避免XSS攻擊 */ -}} {{ end }}&gt; {{ .Text }} &lt;/a&gt; 參考資料 How to Open Link in New Tab | Hugo  A小編  </p>
+  </section>
+  <footer class="entry-footer">September 5, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
+  <a class="entry-link" aria-label="post link to Hugo網站的向外連結" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_link/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>在Hugo網站中加入Favicon</h2>
   </header>
   <section class="entry-content">
@@ -197,37 +211,6 @@ likerID = &#34;&lt;your liker id&gt;&#34; 接著編輯文章使用的模板，�
   </section>
   <footer class="entry-footer">August 31, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
   <a class="entry-link" aria-label="post link to 在Hugo網站中加入LikeButton" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_likebutton/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>將網頁發佈到Github Page</h2>
-  </header>
-  <section class="entry-content">
-    <p>建立Github repository 登入Github的網頁，右上角會看到：
-點擊加號，再點擊New repository：
-出現建立的表單：
-如果是要作為主要的個人網站，Repository name建議可以使用&lt;USERNAME&gt;.github.io。如果你的github repo是命名成&lt;USERNAME&gt;.github.io的話，你的網頁就會發布在&lt;USERNAME&gt;.github.io；如果不是，會在&lt;USERNAME&gt;.github.io/&lt;your_repo&gt;
-勾選Public，只有付費版本可以用Private的repository來建立Github Page。其餘的選項可以自行決定。
-最後按下Create repository。
-上傳到Github repository 如果沒有使用過git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的git設定。
-這裡以hugo專案預設的存檔路徑./public為例。
-移動到public底下，開始用git管理這個資料夾：
-git init 將所有檔案加入管理：
-git add . 提交修改：
-git commit -m &#34;first commit&#34; 連上自己的github repo，並且做確認：
-git remote add origin https://github.com/&lt;USERNAME&gt;/&lt;your_repo&gt;.git git remote -v 強制把現在的branch變成main。
-git branch -M main 然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。
-commit之後就可以push到你的Github了。
-查看你的網頁 在完成上面的內容以後，打開你的repo的設定：
-在左邊的欄位中找到Pages：
-會出現綠色提示框：
-如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟hugo server產生一樣的網頁了（可能要等伺服器更新）。
-之後 如果有更動，回到專案目錄用hugo產生好網頁，接著到GitHub Desktop一樣是用commit和push就可以了。
-參考文件： Build a Personal Website With Github Pages and Hugo  git &amp;ndash;local-branching-on-the-cheap  Adding an existing project to GitHub using the command line  </p>
-  </section>
-  <footer class="entry-footer">August 4, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
-  <a class="entry-link" aria-label="post link to 將網頁發佈到Github Page" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

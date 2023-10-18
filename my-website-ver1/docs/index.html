@@ -170,6 +170,21 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>[隨筆] 把舊網站重新上線</h2>
+  </header>
+  <section class="entry-content">
+    <p>昨天  嘗試了把這個舊網站重新上線未果。
+今天花了不少時間終於發現問題了！因為使用hugo指令產生靜態網頁的結果之間的超連結都會以發布的網址最為 baseURL，所以在本機端只能利用hugo server指令預覽結果。
+另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔
+…
+最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用Monkeytype  和keybr  練習打字，也有找到 Microsoft 的課程Web-Dev-For-Beginners  其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。</p>
+  </section>
+  <footer class="entry-footer">October 18, 2023&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
+  <a class="entry-link" aria-label="post link to [隨筆] 把舊網站重新上線" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>[隨筆] 過了好久好久...</h2>
   </header>
   <section class="entry-content">
@@ -268,20 +283,6 @@ graphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的�
   </section>
   <footer class="entry-footer">September 6, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
   <a class="entry-link" aria-label="post link to 在Hugo網站中加入留言板" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Hugo網站的向外連結</h2>
-  </header>
-  <section class="entry-content">
-    <p>前言 網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。
-Hugo link模板 Hugo渲染link的模板在：
-./layouts/_default/markup/render-link.html 如果沒有，自己新增一個就可以了。在裡面加上：
-&lt;a href=&#34;{{ .Destination | safeURL }}&#34; {{ with .Title}} title=&#34;{{ . }}&#34; {{ end }} {{ if strings.HasPrefix .Destination &#34;http&#34; }} target=&#34;_blank&#34; {{- /* 在新分頁中開啟連結 */ -}} rel=&#34;noopener&#34; {{- /* 避免XSS攻擊 */ -}} {{ end }}&gt; {{ .Text }} &lt;/a&gt; 參考資料 How to Open Link in New Tab | Hugo  A小編  </p>
-  </section>
-  <footer class="entry-footer">September 5, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
-  <a class="entry-link" aria-label="post link to Hugo網站的向外連結" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_link/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
