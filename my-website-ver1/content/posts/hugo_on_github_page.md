@@ -3,13 +3,13 @@ title: "將網頁發佈到Github Page"
 date: 2021-08-04T09:14:28+08:00
 draft: false
 categories: ["個人網站"]
-tags: ["Hugo","Github","Github page","git"]
+tags: ["Hugo", "Github", "Github Page", "git"]
 weight: 0
 ---
 
-### 建立Github repository
+### 建立 Github repository
 
-登入Github的網頁，右上角會看到：
+登入 Github 的網頁，右上角會看到：
 
 ![right upper conner](/images/hugo_on_github_page/right_upper_conner.jpg)
 
@@ -21,21 +21,21 @@ weight: 0
 
 ![create form](/images/hugo_on_github_page/create_form.jpg)
 
-如果是要作為主要的個人網站，Repository name建議可以使用`<USERNAME>.github.io`。如果你的github repo是命名成`<USERNAME>.github.io`的話，你的網頁就會發布在`<USERNAME>.github.io`；如果不是，會在`<USERNAME>.github.io/<your_repo>`
+如果是要作為主要的個人網站，Repository name 建議可以使用`<USERNAME>.github.io`。如果你的 github repo 是命名成`<USERNAME>.github.io`的話，你的網頁就會發布在`<USERNAME>.github.io`；如果不是，會在`<USERNAME>.github.io/<your_repo>`
 
-勾選`Public`，只有付費版本可以用`Private`的repository來建立Github Page。其餘的選項可以自行決定。
+勾選`Public`，只有付費版本可以用`Private`的 repository 來建立 Github Page。其餘的選項可以自行決定。
 
 最後按下`Create repository`。
 
 <br>
 
-### 上傳到Github repository
+### 上傳到 Github repository
 
-如果沒有使用過git，可以先參考[Git 教學(1) : Git 的基本使用](http://gogojimmy.net/2012/01/17/how-to-use-git-1-git-basic/)，完成你的git設定。
+如果沒有使用過 git，可以先參考[Git 教學(1) : Git 的基本使用](http://gogojimmy.net/2012/01/17/how-to-use-git-1-git-basic/)，完成你的 git 設定。
 
-這裡以hugo專案預設的存檔路徑`./public`為例。
+這裡以 hugo 專案預設的存檔路徑`./public`為例。
 
-移動到`public`底下，開始用git管理這個資料夾：
+移動到`public`底下，開始用 git 管理這個資料夾：
 
 ```
 git init
@@ -53,7 +53,7 @@ git add .
 git commit -m "first commit"
 ```
 
-連上自己的github repo，並且做確認：
+連上自己的 github repo，並且做確認：
 
 ```
 git remote add origin https://github.com/<USERNAME>/<your_repo>.git
@@ -61,18 +61,20 @@ git remote -v
 ```
 
 強制把現在的`branch`變成`main`。
+
 ```
 git branch -M main
 ```
-然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 `add local repository`，找到`public`這個資料夾。
 
-`commit`之後就可以`push`到你的Github了。
+然後安裝並登入 GitHub Desktop（因為筆者不會設定登入認證），接著 `add local repository`，找到`public`這個資料夾。
+
+`commit`之後就可以`push`到你的 Github 了。
 
 <br>
 
 ### 查看你的網頁
 
-在完成上面的內容以後，打開你的repo的設定：
+在完成上面的內容以後，打開你的 repo 的設定：
 
 ![setting](/images/hugo_on_github_page/setting.jpg)
 
@@ -88,7 +90,7 @@ git branch -M main
 
 ### 之後
 
-如果有更動，回到專案目錄用`hugo`產生好網頁，接著到GitHub Desktop一樣是用`commit`和`push`就可以了。
+如果有更動，回到專案目錄用`hugo`產生好網頁，接著到 GitHub Desktop 一樣是用`commit`和`push`就可以了。
 
 <br>
 
