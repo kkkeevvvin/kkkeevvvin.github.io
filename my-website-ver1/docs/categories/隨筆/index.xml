@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>隨筆 on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/categories/%E9%9A%A8%E7%AD%86/</link>
+    <description>Recent content in 隨筆 on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Tue, 17 Oct 2023 19:43:47 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/categories/%E9%9A%A8%E7%AD%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[隨筆] 過了好久好久...</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/</link>
+      <pubDate>Tue, 17 Oct 2023 19:43:47 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/after-a-long-time/</guid>
+      <description>從上次更新到寫這篇文章的當下，已經不知不覺地過了兩年。
+之間發生了好多事。
+&amp;hellip;
+因為已經把這個 repo 的 github page 拿掉，差點忘了怎麼 run 他的 server。
+最近在 codecademy 選了 Full-stack Engineer Path 學學前後端，想到自己曾經做過這個東西，也覺得應該要寫點筆記，既然要寫就想說寫好一點順便放在個人網站以後當履歷 XD
+&amp;hellip;
+嘗試了一下，發現不知道為什麼沒有辦法生成靜態網頁。
+那就先當作是我的記事本吧~~ 剩下的有空再說！</description>
+    </item>
+    
+  </channel>
+</rss>

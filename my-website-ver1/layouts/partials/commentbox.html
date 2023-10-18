@@ -1,0 +1,29 @@
+<div class="commentbox"></div>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>
+    commentBox( {{ .Site.Params.CommentBoxId }}, {
+        className: 'commentbox', // the class of divs to look for
+        defaultBoxId: 'commentbox', // the default ID to associate to the div
+        tlcParam: 'tlc', // used for identifying links to comments on your page
+        sortOrder: 'best', // specify the default comment sort order ("best", "newest", "oldest")
+        backgroundColor: null, // default transparent
+        textColor: '#888', // default black
+        subtextColor: '#888', // default grey
+        singleSignOn: null, // enables Single Sign-On (for Professional plans only)
+
+        /**
+         * Creates a unique URL to each box on your page.
+         *
+         * @param {string} boxId
+         * @param {Location} pageLocation - a copy of the current window.location
+         * @returns {string}
+         */
+        createBoxUrl(boxId, pageLocation) {
+
+            pageLocation.search = ''; // removes query string!
+            pageLocation.hash = boxId; // creates link to this specific Comment Box on your page
+            return pageLocation.href; // return url string
+        }
+
+    });
+</script>

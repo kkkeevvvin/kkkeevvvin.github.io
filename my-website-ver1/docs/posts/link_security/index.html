@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Hugo網站的向外連結 | blo.blo.blog</title>
+<meta name="keywords" content="Link, Security, Hugo, New tab" />
+<meta name="description" content="前言 網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。
+Hugo link模板 Hugo渲染link的模板在：
+./layouts/_default/markup/render-link.html 如果沒有，自己新增一個就可以了。在裡面加上：
+&lt;a href=&quot;{{ .Destination | safeURL }}&quot; {{ with .Title}} title=&quot;{{ . }}&quot; {{ end }} {{ if strings.HasPrefix .Destination &quot;http&quot; }} target=&quot;_blank&quot; {{- /* 在新分頁中開啟連結 */ -}} rel=&quot;noopener&quot; {{- /* 避免XSS攻擊 */ -}} {{ end }}&gt; {{ .Text }} &lt;/a&gt; 參考資料 How to Open Link in New Tab | Hugo  A小編  ">
+<meta name="author" content="blo.blo.blog">
+<link rel="canonical" href="https://blo-blo-blog.github.io/posts/link_security/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.35cd0f65a15cafa92372b8313deef5960aae04b90ad722f2bbf509eb0468137e.css" integrity="sha256-Nc0PZaFcr6kjcrgxPe71lgquBLkK1yLyu/UJ6wRoE34=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="apple-touch-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="mask-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNNJDS4LLV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-YNNJDS4LLV', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="Hugo網站的向外連結" />
+<meta property="og:description" content="前言 網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。
+Hugo link模板 Hugo渲染link的模板在：
+./layouts/_default/markup/render-link.html 如果沒有，自己新增一個就可以了。在裡面加上：
+&lt;a href=&quot;{{ .Destination | safeURL }}&quot; {{ with .Title}} title=&quot;{{ . }}&quot; {{ end }} {{ if strings.HasPrefix .Destination &quot;http&quot; }} target=&quot;_blank&quot; {{- /* 在新分頁中開啟連結 */ -}} rel=&quot;noopener&quot; {{- /* 避免XSS攻擊 */ -}} {{ end }}&gt; {{ .Text }} &lt;/a&gt; 參考資料 How to Open Link in New Tab | Hugo  A小編  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blo-blo-blog.github.io/posts/link_security/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-05T15:16:39&#43;08:00" />
+<meta property="article:modified_time" content="2021-09-05T15:16:39&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo網站的向外連結"/>
+<meta name="twitter:description" content="前言 網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。
+Hugo link模板 Hugo渲染link的模板在：
+./layouts/_default/markup/render-link.html 如果沒有，自己新增一個就可以了。在裡面加上：
+&lt;a href=&quot;{{ .Destination | safeURL }}&quot; {{ with .Title}} title=&quot;{{ . }}&quot; {{ end }} {{ if strings.HasPrefix .Destination &quot;http&quot; }} target=&quot;_blank&quot; {{- /* 在新分頁中開啟連結 */ -}} rel=&quot;noopener&quot; {{- /* 避免XSS攻擊 */ -}} {{ end }}&gt; {{ .Text }} &lt;/a&gt; 參考資料 How to Open Link in New Tab | Hugo  A小編  "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://blo-blo-blog.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Hugo網站的向外連結",
+      "item": "https://blo-blo-blog.github.io/posts/link_security/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hugo網站的向外連結",
+  "name": "Hugo網站的向外連結",
+  "description": "前言 網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。\nHugo link模板 Hugo渲染link的模板在：\n./layouts/_default/markup/render-link.html 如果沒有，自己新增一個就可以了。在裡面加上：\n\u0026lt;a href=\u0026quot;{{ .Destination | safeURL }}\u0026quot; {{ with .Title}} title=\u0026quot;{{ . }}\u0026quot; {{ end }} {{ if strings.HasPrefix .Destination \u0026quot;http\u0026quot; }} target=\u0026quot;_blank\u0026quot; {{- /* 在新分頁中開啟連結 */ -}} rel=\u0026quot;noopener\u0026quot; {{- /* 避免XSS攻擊 */ -}} {{ end }}\u0026gt; {{ .Text }} \u0026lt;/a\u0026gt; 參考資料 How to Open Link in New Tab | Hugo  A小編  ",
+  "keywords": [
+    "Link", "Security", "Hugo", "New tab"
+  ],
+  "articleBody": "前言 網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。\nHugo link模板 Hugo渲染link的模板在：\n./layouts/_default/markup/render-link.html 如果沒有，自己新增一個就可以了。在裡面加上：\n{{ .Text }}  參考資料 How to Open Link in New Tab | Hugo  A小編  ",
+  "wordCount" : "60",
+  "inLanguage": "zh-hant",
+  "datePublished": "2021-09-05T15:16:39+08:00",
+  "dateModified": "2021-09-05T15:16:39+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "blo.blo.blog"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blo-blo-blog.github.io/posts/link_security/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "blo.blo.blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blo-blo-blog.github.io" accesskey="h" title="blo.blo.blog (Alt + H)">blo.blo.blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://blo-blo-blog.github.io/archives" title="文章列表">
+                    <span>文章列表</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blo-blo-blog.github.io/categories/" title="分類">
+                    <span>分類</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blo-blo-blog.github.io/tags/" title="標籤">
+                    <span>標籤</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blo-blo-blog.github.io/search" title="搜尋">
+                    <span>搜尋</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://blo-blo-blog.github.io">Home</a>&nbsp;»&nbsp;<a href="https://blo-blo-blog.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Hugo網站的向外連結
+    </h1>
+    <div class="post-meta">September 5, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%89%8d%e8%a8%80" aria-label="前言">前言</a></li>
+                <li>
+                    <a href="#hugo-link%e6%a8%a1%e6%9d%bf" aria-label="Hugo link模板">Hugo link模板</a><ul>
+                        
+                <li>
+                    <a href="#%e5%8f%83%e8%80%83%e8%b3%87%e6%96%99" aria-label="參考資料">參考資料</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h3 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h3>
+<p>網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。</p>
+<h3 id="hugo-link模板">Hugo link模板<a hidden class="anchor" aria-hidden="true" href="#hugo-link模板">#</a></h3>
+<p>Hugo渲染link的模板在：</p>
+<pre tabindex="0"><code>./layouts/_default/markup/render-link.html
+</code></pre><p>如果沒有，自己新增一個就可以了。在裡面加上：</p>
+<pre tabindex="0"><code>&lt;a href=&quot;{{ .Destination | safeURL }}&quot;
+   {{ with .Title}}
+   title=&quot;{{ . }}&quot;
+   {{ end }}
+   {{ if strings.HasPrefix .Destination &quot;http&quot; }}
+   target=&quot;_blank&quot; {{- /* 在新分頁中開啟連結 */ -}}
+   rel=&quot;noopener&quot; {{- /* 避免XSS攻擊 */ -}}
+   {{ end }}&gt;
+    {{ .Text }}
+&lt;/a&gt;
+</code></pre><h4 id="參考資料">參考資料<a hidden class="anchor" aria-hidden="true" href="#參考資料">#</a></h4>
+<p><a href="https://discourse.gohugo.io/t/how-to-open-link-in-new-tab-with-hugos-new-goldmark-markdown-renderer-in-v0-62-0/22540"
+   
+   
+   target="_blank"rel="noopener">
+    How to Open Link in New Tab | Hugo
+</a>
+
+</p>
+<p><a href="https://alittleeditor.com"
+   
+   
+   target="_blank"rel="noopener">
+    A小編
+</a>
+
+</p>
+
+
+    
+    
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/kkkevin/button?referrer=https%3a%2f%2fblo-blo-blog.github.io%2fposts%2flink_security%2f" width="100%" frameborder=0></iframe>
+
+  </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blo-blo-blog.github.io/tags/link/">Link</a></li>
+      <li><a href="https://blo-blo-blog.github.io/tags/security/">Security</a></li>
+      <li><a href="https://blo-blo-blog.github.io/tags/hugo/">Hugo</a></li>
+      <li><a href="https://blo-blo-blog.github.io/tags/new-tab/">New tab</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://blo-blo-blog.github.io/posts/hugo_favicon/">
+    <span class="title"> »</span>
+    <br>
+    <span>在Hugo網站中加入Favicon</span>
+  </a>
+</nav>
+
+  
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://blo-blo-blog.github.io">blo.blo.blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

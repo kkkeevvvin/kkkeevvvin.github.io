@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>在Hugo網站中加入Favicon | blo.blo.blog</title>
+<meta name="keywords" content="favicon, Hugo, Apple touch icon" />
+<meta name="description" content="Favicon是什麼？ 維基百科  是這麼說的：「Favicon是favorites icon的縮寫，亦被稱為website icon（網站圖示）、page icon（頁面圖示）或urlicon（URL圖示）。Favicon是與某個網站或網頁相關聯的圖示。」
+Favicon可以讓網站更容易被記得，或是在Android或iOS的手機中藉由「加入主畫面」的功能產生一個web app。
+Hugo後端的設定 只要在config.yml中加入：
+params: assets: favicon: &quot;&lt;link / abs url&gt;&quot; favicon16x16: &quot;&lt;link / abs url&gt;&quot; favicon32x32: &quot;&lt;link / abs url&gt;&quot; apple_touch_icon: &quot;&lt;link / abs url&gt;&quot; safari_pinned_tab: &quot;&lt;link / abs url&gt;&quot; &lt;link / abs url &gt;是你的favicon來源，筆者是使用ICONS8  提供的免費favicon，在這裡直接填入我選擇的favicon的連結。也可以將favicon的檔案儲存在./static裡面，但是可能載入的速度會比較慢。
+可以藉由修改./layouts/partials/head.html更深入的設定favicon的輸出。
+參考文件 Where do I put my favicon with Hugo | stackoverflow  Adding Custom Favicon(s) | PaperMod  A小編  ">
+<meta name="author" content="blo.blo.blog">
+<link rel="canonical" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_favicon/" />
+<link crossorigin="anonymous" href="/my-website-ver1/docs/assets/css/stylesheet.min.3a6c8052826ab2d4dd1b3ee36b1885b46a691f0d12eca3b920bd30aed9fba791.css" integrity="sha256-OmyAUoJqstTdGz7jaxiFtGppHw0S7KO5IL0wrtn7p5E=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/my-website-ver1/docs/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="apple-touch-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="mask-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.92.2" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNNJDS4LLV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-YNNJDS4LLV', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="在Hugo網站中加入Favicon" />
+<meta property="og:description" content="Favicon是什麼？ 維基百科  是這麼說的：「Favicon是favorites icon的縮寫，亦被稱為website icon（網站圖示）、page icon（頁面圖示）或urlicon（URL圖示）。Favicon是與某個網站或網頁相關聯的圖示。」
+Favicon可以讓網站更容易被記得，或是在Android或iOS的手機中藉由「加入主畫面」的功能產生一個web app。
+Hugo後端的設定 只要在config.yml中加入：
+params: assets: favicon: &quot;&lt;link / abs url&gt;&quot; favicon16x16: &quot;&lt;link / abs url&gt;&quot; favicon32x32: &quot;&lt;link / abs url&gt;&quot; apple_touch_icon: &quot;&lt;link / abs url&gt;&quot; safari_pinned_tab: &quot;&lt;link / abs url&gt;&quot; &lt;link / abs url &gt;是你的favicon來源，筆者是使用ICONS8  提供的免費favicon，在這裡直接填入我選擇的favicon的連結。也可以將favicon的檔案儲存在./static裡面，但是可能載入的速度會比較慢。
+可以藉由修改./layouts/partials/head.html更深入的設定favicon的輸出。
+參考文件 Where do I put my favicon with Hugo | stackoverflow  Adding Custom Favicon(s) | PaperMod  A小編  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_favicon/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-05T11:33:30&#43;08:00" />
+<meta property="article:modified_time" content="2021-09-05T11:33:30&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在Hugo網站中加入Favicon"/>
+<meta name="twitter:description" content="Favicon是什麼？ 維基百科  是這麼說的：「Favicon是favorites icon的縮寫，亦被稱為website icon（網站圖示）、page icon（頁面圖示）或urlicon（URL圖示）。Favicon是與某個網站或網頁相關聯的圖示。」
+Favicon可以讓網站更容易被記得，或是在Android或iOS的手機中藉由「加入主畫面」的功能產生一個web app。
+Hugo後端的設定 只要在config.yml中加入：
+params: assets: favicon: &quot;&lt;link / abs url&gt;&quot; favicon16x16: &quot;&lt;link / abs url&gt;&quot; favicon32x32: &quot;&lt;link / abs url&gt;&quot; apple_touch_icon: &quot;&lt;link / abs url&gt;&quot; safari_pinned_tab: &quot;&lt;link / abs url&gt;&quot; &lt;link / abs url &gt;是你的favicon來源，筆者是使用ICONS8  提供的免費favicon，在這裡直接填入我選擇的favicon的連結。也可以將favicon的檔案儲存在./static裡面，但是可能載入的速度會比較慢。
+可以藉由修改./layouts/partials/head.html更深入的設定favicon的輸出。
+參考文件 Where do I put my favicon with Hugo | stackoverflow  Adding Custom Favicon(s) | PaperMod  A小編  "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "在Hugo網站中加入Favicon",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_favicon/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "在Hugo網站中加入Favicon",
+  "name": "在Hugo網站中加入Favicon",
+  "description": "Favicon是什麼？ 維基百科  是這麼說的：「Favicon是favorites icon的縮寫，亦被稱為website icon（網站圖示）、page icon（頁面圖示）或urlicon（URL圖示）。Favicon是與某個網站或網頁相關聯的圖示。」\nFavicon可以讓網站更容易被記得，或是在Android或iOS的手機中藉由「加入主畫面」的功能產生一個web app。\nHugo後端的設定 只要在config.yml中加入：\nparams: assets: favicon: \u0026quot;\u0026lt;link / abs url\u0026gt;\u0026quot; favicon16x16: \u0026quot;\u0026lt;link / abs url\u0026gt;\u0026quot; favicon32x32: \u0026quot;\u0026lt;link / abs url\u0026gt;\u0026quot; apple_touch_icon: \u0026quot;\u0026lt;link / abs url\u0026gt;\u0026quot; safari_pinned_tab: \u0026quot;\u0026lt;link / abs url\u0026gt;\u0026quot; \u0026lt;link / abs url \u0026gt;是你的favicon來源，筆者是使用ICONS8  提供的免費favicon，在這裡直接填入我選擇的favicon的連結。也可以將favicon的檔案儲存在./static裡面，但是可能載入的速度會比較慢。\n可以藉由修改./layouts/partials/head.html更深入的設定favicon的輸出。\n參考文件 Where do I put my favicon with Hugo | stackoverflow  Adding Custom Favicon(s) | PaperMod  A小編  ",
+  "keywords": [
+    "favicon", "Hugo", "Apple touch icon"
+  ],
+  "articleBody": "Favicon是什麼？ 維基百科  是這麼說的：「Favicon是favorites icon的縮寫，亦被稱為website icon（網站圖示）、page icon（頁面圖示）或urlicon（URL圖示）。Favicon是與某個網站或網頁相關聯的圖示。」\nFavicon可以讓網站更容易被記得，或是在Android或iOS的手機中藉由「加入主畫面」的功能產生一個web app。\nHugo後端的設定 只要在config.yml中加入：\nparams: assets: favicon: \"\" favicon16x16: \"\" favicon32x32: \"\" apple_touch_icon: \"\" safari_pinned_tab: \"\" 是你的favicon來源，筆者是使用ICONS8  提供的免費favicon，在這裡直接填入我選擇的favicon的連結。也可以將favicon的檔案儲存在./static裡面，但是可能載入的速度會比較慢。\n可以藉由修改./layouts/partials/head.html更深入的設定favicon的輸出。\n參考文件 Where do I put my favicon with Hugo | stackoverflow  Adding Custom Favicon(s) | PaperMod  A小編  ",
+  "wordCount" : "61",
+  "inLanguage": "zh-hant",
+  "datePublished": "2021-09-05T11:33:30+08:00",
+  "dateModified": "2021-09-05T11:33:30+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "blo.blo.blog"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_favicon/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "blo.blo.blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://kkkeevvvin.github.io/my-website-ver1/docs" accesskey="h" title="blo.blo.blog (Alt + H)">blo.blo.blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/archives" title="文章列表">
+                    <span>文章列表</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/categories/" title="分類">
+                    <span>分類</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/" title="標籤">
+                    <span>標籤</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/search" title="搜尋">
+                    <span>搜尋</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/about" title="關於我">
+                    <span>關於我</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://kkkeevvvin.github.io/my-website-ver1/docs">Home</a>&nbsp;»&nbsp;<a href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/">Posts</a></div>
+    <h1 class="post-title">
+      在Hugo網站中加入Favicon
+    </h1>
+    <div class="post-meta">September 5, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" Title="click me">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#favicon%e6%98%af%e4%bb%80%e9%ba%bc" aria-label="Favicon是什麼？">Favicon是什麼？</a></li>
+                <li>
+                    <a href="#hugo%e5%be%8c%e7%ab%af%e7%9a%84%e8%a8%ad%e5%ae%9a" aria-label="Hugo後端的設定">Hugo後端的設定</a><ul>
+                        
+                <li>
+                    <a href="#%e5%8f%83%e8%80%83%e6%96%87%e4%bb%b6" aria-label="參考文件">參考文件</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h3 id="favicon是什麼">Favicon是什麼？<a hidden class="anchor" aria-hidden="true" href="#favicon是什麼">#</a></h3>
+<p><a href="https://zh.wikipedia.org/zh-tw/Favicon"
+   
+   
+   target="_blank"rel="noopener">
+    維基百科
+</a>
+
+是這麼說的：「Favicon是favorites icon的縮寫，亦被稱為website icon（網站圖示）、page icon（頁面圖示）或urlicon（URL圖示）。Favicon是與某個網站或網頁相關聯的圖示。」</p>
+<p>Favicon可以讓網站更容易被記得，或是在Android或iOS的手機中藉由「加入主畫面」的功能產生一個web app。</p>
+<h3 id="hugo後端的設定">Hugo後端的設定<a hidden class="anchor" aria-hidden="true" href="#hugo後端的設定">#</a></h3>
+<p>只要在<code>config.yml</code>中加入：</p>
+<pre tabindex="0"><code>params:
+    assets:
+        favicon: &quot;&lt;link / abs url&gt;&quot;
+        favicon16x16: &quot;&lt;link / abs url&gt;&quot;
+        favicon32x32: &quot;&lt;link / abs url&gt;&quot;
+        apple_touch_icon: &quot;&lt;link / abs url&gt;&quot;
+        safari_pinned_tab: &quot;&lt;link / abs url&gt;&quot;
+</code></pre><p><code>&lt;link / abs url &gt;</code>是你的favicon來源，筆者是使用<a href="https://icons8.com/"
+   
+   
+   target="_blank"rel="noopener">
+    ICONS8
+</a>
+
+提供的免費favicon，在這裡直接填入我選擇的favicon的連結。也可以將favicon的檔案儲存在<code>./static</code>裡面，但是可能載入的速度會比較慢。</p>
+<p>可以藉由修改<code>./layouts/partials/head.html</code>更深入的設定favicon的輸出。</p>
+<h4 id="參考文件">參考文件<a hidden class="anchor" aria-hidden="true" href="#參考文件">#</a></h4>
+<p><a href="https://stackoverflow.com/questions/42043648/where-do-i-put-my-favicon-with-hugo"
+   
+   
+   target="_blank"rel="noopener">
+    Where do I put my favicon with Hugo | stackoverflow
+</a>
+
+</p>
+<p><a href="https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-faq/#adding-custom-favicons"
+   
+   
+   target="_blank"rel="noopener">
+    Adding Custom Favicon(s) | PaperMod
+</a>
+
+</p>
+<p><a href="https://alittleeditor.com"
+   
+   
+   target="_blank"rel="noopener">
+    A小編
+</a>
+
+</p>
+
+
+    
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/kkkevin/button?referrer=https%3a%2f%2fkkkeevvvin.github.io%2fmy-website-ver1%2fdocs%2fposts%2fhugo_favicon%2f" width="100%" frameborder=0></iframe>
+
+  </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/favicon/">favicon</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/hugo/">Hugo</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/apple-touch-icon/">Apple touch icon</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_link/">
+    <span class="title">« </span>
+    <br>
+    <span>Hugo網站的向外連結</span>
+  </a>
+  <a class="next" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/rss_newsboat_hugo/">
+    <span class="title"> »</span>
+    <br>
+    <span>RSS簡介與Newsboat的使用</span>
+  </a>
+</nav>
+
+    
+    
+        <div id="graphcomment"></div>
+<script type="text/javascript">
+
+   
+
+  var __semio__params = {
+    graphcommentId: "blobloblog", 
+
+    behaviour: {
+      
+      uid: "/my-website-ver1/docs/posts/hugo_favicon/", 
+      telemetricThroughCmp: true
+    },
+
+    
+
+  }
+
+   
+
+  function __semio__onload() {
+    __semio__gc_graphlogin(__semio__params)
+  }
+
+
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.onload = __semio__onload; gc.defer = true; gc.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+
+
+</script>
+
+    
+
+
+  </footer>
+
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2023 <a href="https://kkkeevvvin.github.io/my-website-ver1/docs">blo.blo.blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onclick = function () {
+      
+    }
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

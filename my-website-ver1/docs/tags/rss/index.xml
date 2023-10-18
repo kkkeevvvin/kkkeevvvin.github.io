@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>RSS on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/rss/</link>
+    <description>Recent content in RSS on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Thu, 02 Sep 2021 17:16:37 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RSS簡介與Newsboat的使用</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/rss_newsboat_hugo/</link>
+      <pubDate>Thu, 02 Sep 2021 17:16:37 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/rss_newsboat_hugo/</guid>
+      <description>什麼是RSS? 下面這個好和弦  的影片裡有詳細的介紹。
+  4:24 開始介紹Newsboat
+安裝Newsboat 如果有安裝snap，可以直接使用
+sudo snap install newsboat 進入程式之後可以按快捷鍵?，查看快捷鍵提示，也可以看#我的Newsboat設定  自訂快捷鍵。
+Distrotube深入解析Newsboat RSS Reader 因為筆者特別喜歡Newsboat的簡潔版面和方便的鍵盤操作，所以另外又找到這個影片，對Newsboat有更進一步的了解。
+  var tag = document.createElement(&#39;script&#39;); tag.src = &#34;https://www.youtube.com/player_api&#34;; var firstScriptTag = document.getElementsByTagName(&#39;script&#39;)[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { ytplayer = new YT.Player(&#39;ytplayer&#39;, { videoId: &#34;CJXdQTGm1jg&#34;, }); console.log(ytplayer); } function playerSeekTo(player, seconds) { player.seekTo(seconds); }  1:46
+如何編輯 urls
+4:06
+ 以下都需要用空格隔開 自訂標題：在網址的後面加上 &amp;ldquo;~&amp;lt;YOUR_CUSTOM_TITLE&amp;gt;&amp;rdquo; 標籤：不需要雙引號，直接輸入你的標籤 註解： &amp;ldquo;!&amp;lt;YOUR_COMMENT&amp;gt;&amp;rdquo;  5:22</description>
+    </item>
+    
+  </channel>
+</rss>

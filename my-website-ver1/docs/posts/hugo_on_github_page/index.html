@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>將網頁發佈到Github Page | blo.blo.blog</title>
+<meta name="keywords" content="Hugo, Github, Github page, git" />
+<meta name="description" content="建立Github repository 登入Github的網頁，右上角會看到：
+點擊加號，再點擊New repository：
+出現建立的表單：
+如果是要作為主要的個人網站，Repository name建議可以使用&lt;USERNAME&gt;.github.io。如果你的github repo是命名成&lt;USERNAME&gt;.github.io的話，你的網頁就會發布在&lt;USERNAME&gt;.github.io；如果不是，會在&lt;USERNAME&gt;.github.io/&lt;your_repo&gt;
+勾選Public，只有付費版本可以用Private的repository來建立Github Page。其餘的選項可以自行決定。
+最後按下Create repository。
+上傳到Github repository 如果沒有使用過git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的git設定。
+這裡以hugo專案預設的存檔路徑./public為例。
+移動到public底下，開始用git管理這個資料夾：
+git init 將所有檔案加入管理：
+git add . 提交修改：
+git commit -m &quot;first commit&quot; 連上自己的github repo，並且做確認：
+git remote add origin https://github.com/&lt;USERNAME&gt;/&lt;your_repo&gt;.git git remote -v 強制把現在的branch變成main。
+git branch -M main 然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。
+commit之後就可以push到你的Github了。
+查看你的網頁 在完成上面的內容以後，打開你的repo的設定：
+在左邊的欄位中找到Pages：
+會出現綠色提示框：
+如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟hugo server產生一樣的網頁了（可能要等伺服器更新）。
+之後 如果有更動，回到專案目錄用hugo產生好網頁，接著到GitHub Desktop一樣是用commit和push就可以了。
+參考文件： Build a Personal Website With Github Pages and Hugo  git &amp;ndash;local-branching-on-the-cheap  Adding an existing project to GitHub using the command line  ">
+<meta name="author" content="blo.blo.blog">
+<link rel="canonical" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/" />
+<link crossorigin="anonymous" href="/my-website-ver1/docs/assets/css/stylesheet.min.3a6c8052826ab2d4dd1b3ee36b1885b46a691f0d12eca3b920bd30aed9fba791.css" integrity="sha256-OmyAUoJqstTdGz7jaxiFtGppHw0S7KO5IL0wrtn7p5E=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/my-website-ver1/docs/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="apple-touch-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="mask-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.92.2" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNNJDS4LLV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-YNNJDS4LLV', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="將網頁發佈到Github Page" />
+<meta property="og:description" content="建立Github repository 登入Github的網頁，右上角會看到：
+點擊加號，再點擊New repository：
+出現建立的表單：
+如果是要作為主要的個人網站，Repository name建議可以使用&lt;USERNAME&gt;.github.io。如果你的github repo是命名成&lt;USERNAME&gt;.github.io的話，你的網頁就會發布在&lt;USERNAME&gt;.github.io；如果不是，會在&lt;USERNAME&gt;.github.io/&lt;your_repo&gt;
+勾選Public，只有付費版本可以用Private的repository來建立Github Page。其餘的選項可以自行決定。
+最後按下Create repository。
+上傳到Github repository 如果沒有使用過git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的git設定。
+這裡以hugo專案預設的存檔路徑./public為例。
+移動到public底下，開始用git管理這個資料夾：
+git init 將所有檔案加入管理：
+git add . 提交修改：
+git commit -m &quot;first commit&quot; 連上自己的github repo，並且做確認：
+git remote add origin https://github.com/&lt;USERNAME&gt;/&lt;your_repo&gt;.git git remote -v 強制把現在的branch變成main。
+git branch -M main 然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。
+commit之後就可以push到你的Github了。
+查看你的網頁 在完成上面的內容以後，打開你的repo的設定：
+在左邊的欄位中找到Pages：
+會出現綠色提示框：
+如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟hugo server產生一樣的網頁了（可能要等伺服器更新）。
+之後 如果有更動，回到專案目錄用hugo產生好網頁，接著到GitHub Desktop一樣是用commit和push就可以了。
+參考文件： Build a Personal Website With Github Pages and Hugo  git &amp;ndash;local-branching-on-the-cheap  Adding an existing project to GitHub using the command line  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-04T09:14:28&#43;08:00" />
+<meta property="article:modified_time" content="2021-08-04T09:14:28&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="將網頁發佈到Github Page"/>
+<meta name="twitter:description" content="建立Github repository 登入Github的網頁，右上角會看到：
+點擊加號，再點擊New repository：
+出現建立的表單：
+如果是要作為主要的個人網站，Repository name建議可以使用&lt;USERNAME&gt;.github.io。如果你的github repo是命名成&lt;USERNAME&gt;.github.io的話，你的網頁就會發布在&lt;USERNAME&gt;.github.io；如果不是，會在&lt;USERNAME&gt;.github.io/&lt;your_repo&gt;
+勾選Public，只有付費版本可以用Private的repository來建立Github Page。其餘的選項可以自行決定。
+最後按下Create repository。
+上傳到Github repository 如果沒有使用過git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的git設定。
+這裡以hugo專案預設的存檔路徑./public為例。
+移動到public底下，開始用git管理這個資料夾：
+git init 將所有檔案加入管理：
+git add . 提交修改：
+git commit -m &quot;first commit&quot; 連上自己的github repo，並且做確認：
+git remote add origin https://github.com/&lt;USERNAME&gt;/&lt;your_repo&gt;.git git remote -v 強制把現在的branch變成main。
+git branch -M main 然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。
+commit之後就可以push到你的Github了。
+查看你的網頁 在完成上面的內容以後，打開你的repo的設定：
+在左邊的欄位中找到Pages：
+會出現綠色提示框：
+如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟hugo server產生一樣的網頁了（可能要等伺服器更新）。
+之後 如果有更動，回到專案目錄用hugo產生好網頁，接著到GitHub Desktop一樣是用commit和push就可以了。
+參考文件： Build a Personal Website With Github Pages and Hugo  git &amp;ndash;local-branching-on-the-cheap  Adding an existing project to GitHub using the command line  "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "將網頁發佈到Github Page",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "將網頁發佈到Github Page",
+  "name": "將網頁發佈到Github Page",
+  "description": "建立Github repository 登入Github的網頁，右上角會看到：\n點擊加號，再點擊New repository：\n出現建立的表單：\n如果是要作為主要的個人網站，Repository name建議可以使用\u0026lt;USERNAME\u0026gt;.github.io。如果你的github repo是命名成\u0026lt;USERNAME\u0026gt;.github.io的話，你的網頁就會發布在\u0026lt;USERNAME\u0026gt;.github.io；如果不是，會在\u0026lt;USERNAME\u0026gt;.github.io/\u0026lt;your_repo\u0026gt;\n勾選Public，只有付費版本可以用Private的repository來建立Github Page。其餘的選項可以自行決定。\n最後按下Create repository。\n上傳到Github repository 如果沒有使用過git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的git設定。\n這裡以hugo專案預設的存檔路徑./public為例。\n移動到public底下，開始用git管理這個資料夾：\ngit init 將所有檔案加入管理：\ngit add . 提交修改：\ngit commit -m \u0026quot;first commit\u0026quot; 連上自己的github repo，並且做確認：\ngit remote add origin https://github.com/\u0026lt;USERNAME\u0026gt;/\u0026lt;your_repo\u0026gt;.git git remote -v 強制把現在的branch變成main。\ngit branch -M main 然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。\ncommit之後就可以push到你的Github了。\n查看你的網頁 在完成上面的內容以後，打開你的repo的設定：\n在左邊的欄位中找到Pages：\n會出現綠色提示框：\n如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟hugo server產生一樣的網頁了（可能要等伺服器更新）。\n之後 如果有更動，回到專案目錄用hugo產生好網頁，接著到GitHub Desktop一樣是用commit和push就可以了。\n參考文件： Build a Personal Website With Github Pages and Hugo  git \u0026amp;ndash;local-branching-on-the-cheap  Adding an existing project to GitHub using the command line  ",
+  "keywords": [
+    "Hugo", "Github", "Github page", "git"
+  ],
+  "articleBody": "建立Github repository 登入Github的網頁，右上角會看到：\n點擊加號，再點擊New repository：\n出現建立的表單：\n如果是要作為主要的個人網站，Repository name建議可以使用.github.io。如果你的github repo是命名成.github.io的話，你的網頁就會發布在.github.io；如果不是，會在.github.io/\n勾選Public，只有付費版本可以用Private的repository來建立Github Page。其餘的選項可以自行決定。\n最後按下Create repository。\n上傳到Github repository 如果沒有使用過git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的git設定。\n這裡以hugo專案預設的存檔路徑./public為例。\n移動到public底下，開始用git管理這個資料夾：\ngit init 將所有檔案加入管理：\ngit add . 提交修改：\ngit commit -m \"first commit\" 連上自己的github repo，並且做確認：\ngit remote add origin https://github.com//.git git remote -v 強制把現在的branch變成main。\ngit branch -M main 然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。\ncommit之後就可以push到你的Github了。\n查看你的網頁 在完成上面的內容以後，打開你的repo的設定：\n在左邊的欄位中找到Pages：\n會出現綠色提示框：\n如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟hugo server產生一樣的網頁了（可能要等伺服器更新）。\n之後 如果有更動，回到專案目錄用hugo產生好網頁，接著到GitHub Desktop一樣是用commit和push就可以了。\n參考文件： Build a Personal Website With Github Pages and Hugo  git \u0026ndash;local-branching-on-the-cheap  Adding an existing project to GitHub using the command line  ",
+  "wordCount" : "87",
+  "inLanguage": "zh-hant",
+  "datePublished": "2021-08-04T09:14:28+08:00",
+  "dateModified": "2021-08-04T09:14:28+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "blo.blo.blog"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "blo.blo.blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://kkkeevvvin.github.io/my-website-ver1/docs" accesskey="h" title="blo.blo.blog (Alt + H)">blo.blo.blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/archives" title="文章列表">
+                    <span>文章列表</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/categories/" title="分類">
+                    <span>分類</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/" title="標籤">
+                    <span>標籤</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/search" title="搜尋">
+                    <span>搜尋</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/about" title="關於我">
+                    <span>關於我</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://kkkeevvvin.github.io/my-website-ver1/docs">Home</a>&nbsp;»&nbsp;<a href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/">Posts</a></div>
+    <h1 class="post-title">
+      將網頁發佈到Github Page
+    </h1>
+    <div class="post-meta">August 4, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" Title="click me">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%bb%ba%e7%ab%8bgithub-repository" aria-label="建立Github repository">建立Github repository</a></li>
+                <li>
+                    <a href="#%e4%b8%8a%e5%82%b3%e5%88%b0github-repository" aria-label="上傳到Github repository">上傳到Github repository</a></li>
+                <li>
+                    <a href="#%e6%9f%a5%e7%9c%8b%e4%bd%a0%e7%9a%84%e7%b6%b2%e9%a0%81" aria-label="查看你的網頁">查看你的網頁</a></li>
+                <li>
+                    <a href="#%e4%b9%8b%e5%be%8c" aria-label="之後">之後</a></li>
+                <li>
+                    <a href="#%e5%8f%83%e8%80%83%e6%96%87%e4%bb%b6" aria-label="參考文件：">參考文件：</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h3 id="建立github-repository">建立Github repository<a hidden class="anchor" aria-hidden="true" href="#建立github-repository">#</a></h3>
+<p>登入Github的網頁，右上角會看到：</p>
+<p><img loading="lazy" src="/images/hugo_on_github_page/right_upper_conner.jpg" alt="right upper conner"  />
+</p>
+<p>點擊加號，再點擊<code>New repository</code>：</p>
+<p><img loading="lazy" src="/images/hugo_on_github_page/new_repo_button.jpg" alt="new repo"  />
+</p>
+<p>出現建立的表單：</p>
+<p><img loading="lazy" src="/images/hugo_on_github_page/create_form.jpg" alt="create form"  />
+</p>
+<p>如果是要作為主要的個人網站，Repository name建議可以使用<code>&lt;USERNAME&gt;.github.io</code>。如果你的github repo是命名成<code>&lt;USERNAME&gt;.github.io</code>的話，你的網頁就會發布在<code>&lt;USERNAME&gt;.github.io</code>；如果不是，會在<code>&lt;USERNAME&gt;.github.io/&lt;your_repo&gt;</code></p>
+<p>勾選<code>Public</code>，只有付費版本可以用<code>Private</code>的repository來建立Github Page。其餘的選項可以自行決定。</p>
+<p>最後按下<code>Create repository</code>。</p>
+<br>
+<h3 id="上傳到github-repository">上傳到Github repository<a hidden class="anchor" aria-hidden="true" href="#上傳到github-repository">#</a></h3>
+<p>如果沒有使用過git，可以先參考<a href="http://gogojimmy.net/2012/01/17/how-to-use-git-1-git-basic/"
+   
+   
+   target="_blank"rel="noopener">
+    Git 教學(1) : Git 的基本使用
+</a>
+
+，完成你的git設定。</p>
+<p>這裡以hugo專案預設的存檔路徑<code>./public</code>為例。</p>
+<p>移動到<code>public</code>底下，開始用git管理這個資料夾：</p>
+<pre tabindex="0"><code>git init
+</code></pre><p>將所有檔案加入管理：</p>
+<pre tabindex="0"><code>git add .
+</code></pre><p>提交修改：</p>
+<pre tabindex="0"><code>git commit -m &quot;first commit&quot;
+</code></pre><p>連上自己的github repo，並且做確認：</p>
+<pre tabindex="0"><code>git remote add origin https://github.com/&lt;USERNAME&gt;/&lt;your_repo&gt;.git
+git remote -v
+</code></pre><p>強制把現在的<code>branch</code>變成<code>main</code>。</p>
+<pre tabindex="0"><code>git branch -M main
+</code></pre><p>然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 <code>add local repository</code>，找到<code>public</code>這個資料夾。</p>
+<p><code>commit</code>之後就可以<code>push</code>到你的Github了。</p>
+<br>
+<h3 id="查看你的網頁">查看你的網頁<a hidden class="anchor" aria-hidden="true" href="#查看你的網頁">#</a></h3>
+<p>在完成上面的內容以後，打開你的repo的設定：</p>
+<p><img loading="lazy" src="/images/hugo_on_github_page/setting.jpg" alt="setting"  />
+</p>
+<p>在左邊的欄位中找到<code>Pages</code>：</p>
+<p><img loading="lazy" src="/images/hugo_on_github_page/where_is_pages.jpg" alt="where is Pages"  />
+</p>
+<p>會出現綠色提示框：</p>
+<p><img loading="lazy" src="/images/hugo_on_github_page/pages_setting.jpg" alt="Pages setting"  />
+</p>
+<p>如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟<code>hugo server</code>產生一樣的網頁了（可能要等伺服器更新）。</p>
+<h3 id="之後">之後<a hidden class="anchor" aria-hidden="true" href="#之後">#</a></h3>
+<p>如果有更動，回到專案目錄用<code>hugo</code>產生好網頁，接著到GitHub Desktop一樣是用<code>commit</code>和<code>push</code>就可以了。</p>
+<br>
+<h3 id="參考文件">參考文件：<a hidden class="anchor" aria-hidden="true" href="#參考文件">#</a></h3>
+<p><a href="https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7"
+   
+   
+   target="_blank"rel="noopener">
+    Build a Personal Website With Github Pages and Hugo
+</a>
+
+</p>
+<p><a href="https://git-scm.com/docs/git-branch"
+   
+   
+   target="_blank"rel="noopener">
+    git &amp;ndash;local-branching-on-the-cheap
+</a>
+
+</p>
+<p><a href="https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line"
+   
+   
+   target="_blank"rel="noopener">
+    Adding an existing project to GitHub using the command line
+</a>
+
+</p>
+
+
+    
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/kkkevin/button?referrer=https%3a%2f%2fkkkeevvvin.github.io%2fmy-website-ver1%2fdocs%2fposts%2fhugo_on_github_page%2f" width="100%" frameborder=0></iframe>
+
+  </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/hugo/">Hugo</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/github/">Github</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/github-page/">Github page</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/git/">git</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_likebutton/">
+    <span class="title">« </span>
+    <br>
+    <span>在Hugo網站中加入LikeButton</span>
+  </a>
+  <a class="next" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_from_scratch/">
+    <span class="title"> »</span>
+    <br>
+    <span>用Hugo製作網頁</span>
+  </a>
+</nav>
+
+    
+    
+        <div id="graphcomment"></div>
+<script type="text/javascript">
+
+   
+
+  var __semio__params = {
+    graphcommentId: "blobloblog", 
+
+    behaviour: {
+      
+      uid: "/my-website-ver1/docs/posts/hugo_on_github_page/", 
+      telemetricThroughCmp: true
+    },
+
+    
+
+  }
+
+   
+
+  function __semio__onload() {
+    __semio__gc_graphlogin(__semio__params)
+  }
+
+
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.onload = __semio__onload; gc.defer = true; gc.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+
+
+</script>
+
+    
+
+
+  </footer>
+
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2023 <a href="https://kkkeevvvin.github.io/my-website-ver1/docs">blo.blo.blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onclick = function () {
+      
+    }
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

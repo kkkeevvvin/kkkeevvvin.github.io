@@ -1,0 +1,11 @@
+<a href="{{ .Destination | safeURL }}"
+   {{ with .Title}}
+   title="{{ . }}"
+   {{ end }}
+   {{ if strings.HasPrefix .Destination "http" }}
+   target="_blank" {{- /* 在新分頁中開啟連結 */ -}}
+   rel="noopener" {{- /* 避免XSS攻擊 */ -}}
+   {{ end }}>
+    {{ .Text }}
+</a>
+

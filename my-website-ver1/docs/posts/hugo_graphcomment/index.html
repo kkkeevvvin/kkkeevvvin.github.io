@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>在Hugo網站中加入留言板 | blo.blo.blog</title>
+<meta name="keywords" content="Hugo, Graphcomment, comments platform" />
+<meta name="description" content="前言 留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務Graphcomment  ，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。
+申請帳號以及設定 Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。
+註冊完以後，按下Add site，會出現一個表單：
+ Site name: 一個好記的名字就好，讓你自己容易管理各個網站 Unique ID: 會在之後的部份用到 Website URL: 就是你的網站URL Whitelist domains: 自己決定吧 Supported language: 好像是壞掉了，之後的設定可以再改  勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。
+接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。
+將Graphcomment加入Hugo 打開config.yml，加入：
+params: GraphCommentId: &lt;YOUR_UNIQUE_ID&gt; comments: ture #如果哪天想關掉留言板，改成false就行了 在./layouts/partials中，加入或修改comments.html
+{{ if ne .Params.comments false }} {{ if .Site.Params.GraphCommentId }} {{ partial &quot;graphcomment.html&quot; . }} {{ end }} {{ end }} 
+接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到./layouts/partials，新增graphcomment.html並且貼上那一段程式碼。
+然後找到下面這行：
+graphcommentId: &quot;&lt;YOUR_UNIQUE_ID&gt;&quot;, 把他修改成：
+graphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。">
+<meta name="author" content="blo.blo.blog">
+<link rel="canonical" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/" />
+<link crossorigin="anonymous" href="/my-website-ver1/docs/assets/css/stylesheet.min.3a6c8052826ab2d4dd1b3ee36b1885b46a691f0d12eca3b920bd30aed9fba791.css" integrity="sha256-OmyAUoJqstTdGz7jaxiFtGppHw0S7KO5IL0wrtn7p5E=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/my-website-ver1/docs/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="apple-touch-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="mask-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.92.2" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNNJDS4LLV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-YNNJDS4LLV', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="在Hugo網站中加入留言板" />
+<meta property="og:description" content="前言 留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務Graphcomment  ，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。
+申請帳號以及設定 Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。
+註冊完以後，按下Add site，會出現一個表單：
+ Site name: 一個好記的名字就好，讓你自己容易管理各個網站 Unique ID: 會在之後的部份用到 Website URL: 就是你的網站URL Whitelist domains: 自己決定吧 Supported language: 好像是壞掉了，之後的設定可以再改  勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。
+接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。
+將Graphcomment加入Hugo 打開config.yml，加入：
+params: GraphCommentId: &lt;YOUR_UNIQUE_ID&gt; comments: ture #如果哪天想關掉留言板，改成false就行了 在./layouts/partials中，加入或修改comments.html
+{{ if ne .Params.comments false }} {{ if .Site.Params.GraphCommentId }} {{ partial &quot;graphcomment.html&quot; . }} {{ end }} {{ end }} 
+接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到./layouts/partials，新增graphcomment.html並且貼上那一段程式碼。
+然後找到下面這行：
+graphcommentId: &quot;&lt;YOUR_UNIQUE_ID&gt;&quot;, 把他修改成：
+graphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-06T11:15:28&#43;08:00" />
+<meta property="article:modified_time" content="2021-09-06T11:15:28&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在Hugo網站中加入留言板"/>
+<meta name="twitter:description" content="前言 留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務Graphcomment  ，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。
+申請帳號以及設定 Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。
+註冊完以後，按下Add site，會出現一個表單：
+ Site name: 一個好記的名字就好，讓你自己容易管理各個網站 Unique ID: 會在之後的部份用到 Website URL: 就是你的網站URL Whitelist domains: 自己決定吧 Supported language: 好像是壞掉了，之後的設定可以再改  勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。
+接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。
+將Graphcomment加入Hugo 打開config.yml，加入：
+params: GraphCommentId: &lt;YOUR_UNIQUE_ID&gt; comments: ture #如果哪天想關掉留言板，改成false就行了 在./layouts/partials中，加入或修改comments.html
+{{ if ne .Params.comments false }} {{ if .Site.Params.GraphCommentId }} {{ partial &quot;graphcomment.html&quot; . }} {{ end }} {{ end }} 
+接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到./layouts/partials，新增graphcomment.html並且貼上那一段程式碼。
+然後找到下面這行：
+graphcommentId: &quot;&lt;YOUR_UNIQUE_ID&gt;&quot;, 把他修改成：
+graphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "在Hugo網站中加入留言板",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "在Hugo網站中加入留言板",
+  "name": "在Hugo網站中加入留言板",
+  "description": "前言 留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務Graphcomment  ，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。\n申請帳號以及設定 Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。\n註冊完以後，按下Add site，會出現一個表單：\n Site name: 一個好記的名字就好，讓你自己容易管理各個網站 Unique ID: 會在之後的部份用到 Website URL: 就是你的網站URL Whitelist domains: 自己決定吧 Supported language: 好像是壞掉了，之後的設定可以再改  勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。\n接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。\n將Graphcomment加入Hugo 打開config.yml，加入：\nparams: GraphCommentId: \u0026lt;YOUR_UNIQUE_ID\u0026gt; comments: ture #如果哪天想關掉留言板，改成false就行了 在./layouts/partials中，加入或修改comments.html\n{{ if ne .Params.comments false }} {{ if .Site.Params.GraphCommentId }} {{ partial \u0026quot;graphcomment.html\u0026quot; . }} {{ end }} {{ end }} \n接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到./layouts/partials，新增graphcomment.html並且貼上那一段程式碼。\n然後找到下面這行：\ngraphcommentId: \u0026quot;\u0026lt;YOUR_UNIQUE_ID\u0026gt;\u0026quot;, 把他修改成：\ngraphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。",
+  "keywords": [
+    "Hugo", "Graphcomment", "comments platform"
+  ],
+  "articleBody": "前言 留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務Graphcomment  ，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。\n申請帳號以及設定 Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。\n註冊完以後，按下Add site，會出現一個表單：\n Site name: 一個好記的名字就好，讓你自己容易管理各個網站 Unique ID: 會在之後的部份用到 Website URL: 就是你的網站URL Whitelist domains: 自己決定吧 Supported language: 好像是壞掉了，之後的設定可以再改  勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。\n接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。\n將Graphcomment加入Hugo 打開config.yml，加入：\nparams: GraphCommentId:  comments: ture #如果哪天想關掉留言板，改成false就行了 在./layouts/partials中，加入或修改comments.html\n{{ if ne .Params.comments false }} {{ if .Site.Params.GraphCommentId }} {{ partial \"graphcomment.html\" . }} {{ end }} {{ end }} \n接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到./layouts/partials，新增graphcomment.html並且貼上那一段程式碼。\n然後找到下面這行：\ngraphcommentId: \"\", 把他修改成：\ngraphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。\n如果以後要修改GraphCommentId，只需修改config.yml裡面的。\n接下來找到：\nbehaviour: { // HIGHLY RECOMMENDED // uniq identifer for the comments thread on your page (ex: your page id) 加入下面一行程式碼：\nuid: {{ .RelPermalink }}, 這一個部份非常重要，筆者在複製程式碼時，沒有認真看裡面的註解，是在A小編  的測試之下，發現留言會亂跑到其他篇文章。解決方法就是看清楚註解，加入uid，讓Graphcomment的後端可以分辨是哪一篇文章的留言。\n最後，打開./layouts/_default/single.html（這是文章的基本版型），在自己喜歡的位置加上：\n{{- if (.Param \"comments\") }} {{- partial \"comments.html\" . }} {{- end }} 如果以上的步驟都有正確操作，用hugo server [-d]就可以看到留言版囉✧◝(⁰▿⁰)◜✧\n後記 這是我嘗試的第二個方案，原本是要用staticman + Heroku，但是好麻煩就放棄了。\n但是Graphcomment的載入速度有點慢啊\n(o´Å｀)=з\n參考資料 https://graphcomment.com/  Comments | Hugo  How to get the URL of the current page with the rel or relref function? | Hugo  ",
+  "wordCount" : "139",
+  "inLanguage": "zh-hant",
+  "datePublished": "2021-09-06T11:15:28+08:00",
+  "dateModified": "2021-09-06T11:15:28+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "blo.blo.blog"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "blo.blo.blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://kkkeevvvin.github.io/my-website-ver1/docs" accesskey="h" title="blo.blo.blog (Alt + H)">blo.blo.blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/archives" title="文章列表">
+                    <span>文章列表</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/categories/" title="分類">
+                    <span>分類</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/" title="標籤">
+                    <span>標籤</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/search" title="搜尋">
+                    <span>搜尋</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/about" title="關於我">
+                    <span>關於我</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://kkkeevvvin.github.io/my-website-ver1/docs">Home</a>&nbsp;»&nbsp;<a href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/">Posts</a></div>
+    <h1 class="post-title">
+      在Hugo網站中加入留言板
+    </h1>
+    <div class="post-meta">September 6, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" Title="click me">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%89%8d%e8%a8%80" aria-label="前言">前言</a></li>
+                <li>
+                    <a href="#%e7%94%b3%e8%ab%8b%e5%b8%b3%e8%99%9f%e4%bb%a5%e5%8f%8a%e8%a8%ad%e5%ae%9a" aria-label="申請帳號以及設定">申請帳號以及設定</a></li>
+                <li>
+                    <a href="#%e5%b0%87graphcomment%e5%8a%a0%e5%85%a5hugo" aria-label="將Graphcomment加入Hugo">將Graphcomment加入Hugo</a></li>
+                <li>
+                    <a href="#%e5%be%8c%e8%a8%98" aria-label="後記">後記</a><ul>
+                        
+                <li>
+                    <a href="#%e5%8f%83%e8%80%83%e8%b3%87%e6%96%99" aria-label="參考資料">參考資料</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h3 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h3>
+<p>留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務<a href="https://graphcomment.com/"
+   
+   
+   target="_blank"rel="noopener">
+    Graphcomment
+</a>
+
+，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。</p>
+<h3 id="申請帳號以及設定">申請帳號以及設定<a hidden class="anchor" aria-hidden="true" href="#申請帳號以及設定">#</a></h3>
+<p>Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。</p>
+<p>註冊完以後，按下<code>Add site</code>，會出現一個表單：</p>
+<ul>
+<li>Site name: 一個好記的名字就好，讓你自己容易管理各個網站</li>
+<li>Unique ID: 會在之後的部份用到</li>
+<li>Website URL: 就是你的網站URL</li>
+<li>Whitelist domains: 自己決定吧</li>
+<li>Supported language: 好像是壞掉了，之後的設定可以再改</li>
+</ul>
+<p>勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。</p>
+<p>接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。</p>
+<h3 id="將graphcomment加入hugo">將Graphcomment加入Hugo<a hidden class="anchor" aria-hidden="true" href="#將graphcomment加入hugo">#</a></h3>
+<p>打開<code>config.yml</code>，加入：</p>
+<pre tabindex="0"><code>params:
+    GraphCommentId: &lt;YOUR_UNIQUE_ID&gt;
+    comments: ture #如果哪天想關掉留言板，改成false就行了
+</code></pre><p>在<code>./layouts/partials</code>中，加入或修改<code>comments.html</code></p>
+<pre tabindex="0"><code>{{ if ne .Params.comments false }}
+    {{ if .Site.Params.GraphCommentId }}
+        {{ partial &quot;graphcomment.html&quot; . }}
+    {{ end }}
+{{ end }}
+</code></pre><br>
+<p>接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到<code>./layouts/partials</code>，新增<code>graphcomment.html</code>並且貼上那一段程式碼。</p>
+<p>然後找到下面這行：</p>
+<pre tabindex="0"><code>graphcommentId: &quot;&lt;YOUR_UNIQUE_ID&gt;&quot;,
+</code></pre><p>把他修改成：</p>
+<pre tabindex="0"><code>graphcommentId: {{ .Site.Params.GraphCommentId }}, 
+</code></pre><p>記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。</p>
+<p>如果以後要修改GraphCommentId，只需修改<code>config.yml</code>裡面的。</p>
+<br>
+<p>接下來找到：</p>
+<pre tabindex="0"><code>behaviour: {
+      // HIGHLY RECOMMENDED
+      // uniq identifer for the comments thread on your page (ex: your page id)
+</code></pre><p>加入下面一行程式碼：</p>
+<pre tabindex="0"><code>uid: {{ .RelPermalink }}, 
+</code></pre><p>這一個部份非常重要，筆者在複製程式碼時，沒有認真看裡面的註解，是在<a href="https://alittleeditor.com/"
+   
+   
+   target="_blank"rel="noopener">
+    A小編
+</a>
+
+的測試之下，發現留言會亂跑到其他篇文章。解決方法就是看清楚註解，加入uid，讓Graphcomment的後端可以分辨是哪一篇文章的留言。</p>
+<br>
+<p>最後，打開<code>./layouts/_default/single.html</code>（這是文章的基本版型），在自己喜歡的位置加上：</p>
+<pre tabindex="0"><code>{{- if (.Param &quot;comments&quot;) }}
+{{- partial &quot;comments.html&quot; . }}
+{{- end }}
+</code></pre><p>如果以上的步驟都有正確操作，用<code>hugo server [-d]</code>就可以看到留言版囉✧◝(⁰▿⁰)◜✧</p>
+<h3 id="後記">後記<a hidden class="anchor" aria-hidden="true" href="#後記">#</a></h3>
+<p>這是我嘗試的第二個方案，原本是要用staticman + Heroku，但是好麻煩就放棄了。</p>
+<p>但是Graphcomment的載入速度有點慢啊<br>(o´Å｀)=з</p>
+<h4 id="參考資料">參考資料<a hidden class="anchor" aria-hidden="true" href="#參考資料">#</a></h4>
+<p><a href="https://graphcomment.com/"
+   
+   
+   target="_blank"rel="noopener">
+    https://graphcomment.com/
+</a>
+
+</p>
+<p><a href="https://gohugo.io/content-management/comments/"
+   
+   
+   target="_blank"rel="noopener">
+    Comments | Hugo
+</a>
+
+</p>
+<p><a href="https://discourse.gohugo.io/t/how-to-get-the-url-of-the-current-page-with-the-rel-or-relref-function/29113"
+   
+   
+   target="_blank"rel="noopener">
+    How to get the URL of the current page with the rel or relref function? | Hugo
+</a>
+
+</p>
+
+
+    
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/kkkevin/button?referrer=https%3a%2f%2fkkkeevvvin.github.io%2fmy-website-ver1%2fdocs%2fposts%2fhugo_graphcomment%2f" width="100%" frameborder=0></iframe>
+
+  </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/hugo/">Hugo</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/graphcomment/">Graphcomment</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/comments-platform/">comments platform</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/bashcrawl/">
+    <span class="title">« </span>
+    <br>
+    <span>[遊戲] Bashcrawl介紹</span>
+  </a>
+  <a class="next" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_link/">
+    <span class="title"> »</span>
+    <br>
+    <span>Hugo網站的向外連結</span>
+  </a>
+</nav>
+
+    
+    
+        <div id="graphcomment"></div>
+<script type="text/javascript">
+
+   
+
+  var __semio__params = {
+    graphcommentId: "blobloblog", 
+
+    behaviour: {
+      
+      uid: "/my-website-ver1/docs/posts/hugo_graphcomment/", 
+      telemetricThroughCmp: true
+    },
+
+    
+
+  }
+
+   
+
+  function __semio__onload() {
+    __semio__gc_graphlogin(__semio__params)
+  }
+
+
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.onload = __semio__onload; gc.defer = true; gc.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+
+
+</script>
+
+    
+
+
+  </footer>
+
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2023 <a href="https://kkkeevvvin.github.io/my-website-ver1/docs">blo.blo.blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onclick = function () {
+      
+    }
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

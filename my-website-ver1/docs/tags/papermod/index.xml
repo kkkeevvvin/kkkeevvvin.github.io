@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Papermod on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/papermod/</link>
+    <description>Recent content in Papermod on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Tue, 03 Aug 2021 09:53:04 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/papermod/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用Hugo製作網頁</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_from_scratch/</link>
+      <pubDate>Tue, 03 Aug 2021 09:53:04 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_from_scratch/</guid>
+      <description>安裝Hugo 這篇以支援snap的Linux版本為例，下載擴充版本的Hugo。
+snap install hugo --channel=extended 其他作業系統可以到 Install Hugo | Hugo  找到相應的指示安裝。
+檢查是否安裝成功：
+hugo version  若要解除安裝：
+snap remove hugo 
+開始網頁專案 確定安裝好Hugo之後，選好要存放網頁專案的目錄，用指令
+ hugo new site mywebsite -f yml  mywebsite可以替換成其他你想要的名字。 -f yml指定使用yml格式，因為yml/yaml的格式比起toml更容易閱讀，根據Papermod的作者adityatelange  的說法  ，所以以下也將採用yml的格式。如果有需要，你可以很容易的找到YML to TOML  的轉換器。   可以看到hugo幫你建立好的檔案架構如下。
+mywebsite/ ├── archetypes │ └── default.md ├── config.yml ├── content ├── data ├── layouts ├── static └── themes 選擇主題 我選擇的主題是PaperMod  ，因為這個主題裡面有很不錯的指引，也有舒服的版面設計。
+移動到mywebsite底下執行以下指令，把PaperMod的資料複製到mywebsite/themes/PaperMod。
+git clone https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

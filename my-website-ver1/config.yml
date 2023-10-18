@@ -1,0 +1,204 @@
+baseURL: "https://kkkeevvvin.github.io/my-website-ver1/docs"
+title: "blo.blo.blog"
+paginate: 5 # 一頁放幾筆資料
+theme: PaperMod
+
+languageCode: utf-8
+defaultContentLanguage: zh-hant
+
+publishdir: "./docs"
+enableInlineShortcodes: true
+enableRobotsTXT: true
+# buildDrafts: false
+# buildFuture: false
+# buildExpired: false
+# enableEmoji: true
+googleAnalytics: G-YNNJDS4LLV
+
+# minify:
+# disableXML: true
+# minifyOutput: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+languages:
+  zh-hant:
+    languageName: "繁中"
+    weight: 0
+    menu:
+      main:
+        - name: "文章列表"
+          url: archives
+          weight: 1
+        - name: "分類"
+          url: categories/
+          weight: 2
+        - name: "標籤"
+          url: tags/
+          weight: 3
+        - name: "搜尋"
+          url: search
+          weight: 4
+        - name: "關於我"
+          url: about
+          weight: 5
+
+  # en:
+  #     languageName: "English"
+  #     weight: 1
+  #     menu:
+  #         main:
+  #             - name: Archive
+  #               url: archives
+  #               weight: 5
+  #             - name: Search
+  #               url: search/
+  #               weight: 15
+  #             - name: Tags
+  #               url: tags/
+  #               weight: 10
+  #             - name: Categories
+  #               url: categories/
+  #               weight: 10
+  #             - name: Series
+  #               url: series
+  #               weight: 6
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  # description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+  author: blo.blo.blog
+  # author: ["Me", "You"] # multiple authors
+
+  defaultTheme: dark
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  comments: true
+  # images: ["papermod-cover.png"]
+  # images: "images/hugo_on_github_page/right_upper_conner.jpg"
+
+  likerID: "kkkevin"
+  GraphCommentId: "blobloblog"
+  CommentBoxId: "5694344052867072-proj"
+
+  # profileMode:
+  # enabled: false
+  # title: Profile
+  # imageUrl: "#"
+  # imageTitle: my image
+  # imageWidth: 120
+  # imageHeight: 120
+  # buttons:
+  #     - name: Archives
+  #       url: archives
+  #     - name: Tags
+  #       url: tags
+  #     - name: Series
+  #       url: series
+
+  homeInfoParams:
+    Title: "blo.blo.blog"
+    Content: >
+      嗨！
+  socialIcons:
+    - name: github
+      url: "https://github.com/blo-blo-blog/blo-blo-blog.github.io"
+    - name: instagram
+      url: "https://www.instagram.com/blo.blo.blog/"
+    - name: rss
+      url: "/index.xml"
+    # - name: other
+    #   url: "https://liker.land/kkkevin/"
+
+  # editPost:
+  #     URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+  #     Text: "Suggest Changes" # edit text
+  #     appendFilePath: true # to append file path to Edit link
+
+  # label:
+  #     text: "Home"
+  #     icon: icon.png
+  #     iconHeight: 35
+
+  # analytics:
+  #     google:
+  #         SiteVerificationTag: "XYZabc"
+
+  assets:
+    favicon: "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    favicon16x16: "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    favicon32x32: "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    apple_touch_icon: "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    safari_pinned_tab: "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+
+  # cover:
+  #     hidden: true # hide everywhere but not in structured data
+  #     hiddenInList: true # hide on list pages and home
+  #     hiddenInSingle: true # hide on single page
+
+  # fuseOpts:
+  #     isCaseSensitive: false
+  #     shouldSort: true
+  #     location: 0
+  #     distance: 1000
+  #     threshold: 0.4
+  #     minMatchCharLength: 0
+  #     keys: ["title", "permalink", "summary", "content"]
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+#     highlight:
+#         # anchorLineNos: true
+#         codeFences: true
+#         guessSyntax: true
+#         lineNos: true
+#         # noClasses: false
+#         style: monokai
+
+# privacy:
+#     disqus:
+#          disable: true
+#
+#     googleAnalytics:
+#         disable: true
+#
+#     vimeo:
+#         disabled: true
+#         simple: true
+#
+#     twitter:
+#         disabled: true
+#         enableDNT: true
+#         simple: true
+#
+#     instagram:
+#         disabled: true
+#         simple: true
+#
+#     youtube:
+#         disabled: true
+#         privacyEnhanced: true
+#
+# services:
+#     instagram:
+#         disableInlineCSS: true
+#     twitter:
+#         disableInlineCSS: true

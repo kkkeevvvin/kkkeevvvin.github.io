@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>favicon on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/favicon/</link>
+    <description>Recent content in favicon on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Sun, 05 Sep 2021 11:33:30 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/favicon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Hugo網站中加入Favicon</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_favicon/</link>
+      <pubDate>Sun, 05 Sep 2021 11:33:30 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_favicon/</guid>
+      <description>Favicon是什麼？ 維基百科  是這麼說的：「Favicon是favorites icon的縮寫，亦被稱為website icon（網站圖示）、page icon（頁面圖示）或urlicon（URL圖示）。Favicon是與某個網站或網頁相關聯的圖示。」
+Favicon可以讓網站更容易被記得，或是在Android或iOS的手機中藉由「加入主畫面」的功能產生一個web app。
+Hugo後端的設定 只要在config.yml中加入：
+params: assets: favicon: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; favicon16x16: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; favicon32x32: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; apple_touch_icon: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; safari_pinned_tab: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; &amp;lt;link / abs url &amp;gt;是你的favicon來源，筆者是使用ICONS8  提供的免費favicon，在這裡直接填入我選擇的favicon的連結。也可以將favicon的檔案儲存在./static裡面，但是可能載入的速度會比較慢。
+可以藉由修改./layouts/partials/head.html更深入的設定favicon的輸出。
+參考文件 Where do I put my favicon with Hugo | stackoverflow  Adding Custom Favicon(s) | PaperMod  A小編  </description>
+    </item>
+    
+  </channel>
+</rss>

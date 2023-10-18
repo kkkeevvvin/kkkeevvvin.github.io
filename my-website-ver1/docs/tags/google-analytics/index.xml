@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Google Analytics on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/google-analytics/</link>
+    <description>Recent content in Google Analytics on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Thu, 02 Sep 2021 16:26:01 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/google-analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Hugo網站中加入Google Analytics</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_ga/</link>
+      <pubDate>Thu, 02 Sep 2021 16:26:01 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_ga/</guid>
+      <description>首先可以參考Google Analytics GA是什麼？  。
+取得「評估ID」之後，在 config.yml 中加上：
+googleAnalytics: &amp;lt;YOUR_TRACKING_ID&amp;gt; 並且在 params 下面加上：
+env: production 接著去點點看你的網站，如果成功的話可以在GA的頁面，看到活動紀錄。</description>
+    </item>
+    
+  </channel>
+</rss>

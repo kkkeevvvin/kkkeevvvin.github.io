@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>comments platform on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/comments-platform/</link>
+    <description>Recent content in comments platform on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Mon, 06 Sep 2021 11:15:28 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/comments-platform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Hugo網站中加入留言板</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/</link>
+      <pubDate>Mon, 06 Sep 2021 11:15:28 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/</guid>
+      <description>前言 留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務Graphcomment  ，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。
+申請帳號以及設定 Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。
+註冊完以後，按下Add site，會出現一個表單：
+ Site name: 一個好記的名字就好，讓你自己容易管理各個網站 Unique ID: 會在之後的部份用到 Website URL: 就是你的網站URL Whitelist domains: 自己決定吧 Supported language: 好像是壞掉了，之後的設定可以再改  勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。
+接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。
+將Graphcomment加入Hugo 打開config.yml，加入：
+params: GraphCommentId: &amp;lt;YOUR_UNIQUE_ID&amp;gt; comments: ture #如果哪天想關掉留言板，改成false就行了 在./layouts/partials中，加入或修改comments.html
+{{ if ne .Params.comments false }} {{ if .Site.Params.GraphCommentId }} {{ partial &amp;quot;graphcomment.html&amp;quot; . }} {{ end }} {{ end }} 
+接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到./layouts/partials，新增graphcomment.html並且貼上那一段程式碼。
+然後找到下面這行：
+graphcommentId: &amp;quot;&amp;lt;YOUR_UNIQUE_ID&amp;gt;&amp;quot;, 把他修改成：
+graphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。</description>
+    </item>
+    
+  </channel>
+</rss>

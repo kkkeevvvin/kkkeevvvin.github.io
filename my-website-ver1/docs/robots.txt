@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://kkkeevvvin.github.io/my-website-ver1/docs/sitemap.xml

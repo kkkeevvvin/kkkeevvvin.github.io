@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Github on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/github/</link>
+    <description>Recent content in Github on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Wed, 04 Aug 2021 09:14:28 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>將網頁發佈到Github Page</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/</link>
+      <pubDate>Wed, 04 Aug 2021 09:14:28 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/</guid>
+      <description>建立Github repository 登入Github的網頁，右上角會看到：
+點擊加號，再點擊New repository：
+出現建立的表單：
+如果是要作為主要的個人網站，Repository name建議可以使用&amp;lt;USERNAME&amp;gt;.github.io。如果你的github repo是命名成&amp;lt;USERNAME&amp;gt;.github.io的話，你的網頁就會發布在&amp;lt;USERNAME&amp;gt;.github.io；如果不是，會在&amp;lt;USERNAME&amp;gt;.github.io/&amp;lt;your_repo&amp;gt;
+勾選Public，只有付費版本可以用Private的repository來建立Github Page。其餘的選項可以自行決定。
+最後按下Create repository。
+上傳到Github repository 如果沒有使用過git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的git設定。
+這裡以hugo專案預設的存檔路徑./public為例。
+移動到public底下，開始用git管理這個資料夾：
+git init 將所有檔案加入管理：
+git add . 提交修改：
+git commit -m &amp;quot;first commit&amp;quot; 連上自己的github repo，並且做確認：
+git remote add origin https://github.com/&amp;lt;USERNAME&amp;gt;/&amp;lt;your_repo&amp;gt;.git git remote -v 強制把現在的branch變成main。
+git branch -M main 然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。
+commit之後就可以push到你的Github了。
+查看你的網頁 在完成上面的內容以後，打開你的repo的設定：
+在左邊的欄位中找到Pages：
+會出現綠色提示框：
+如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟hugo server產生一樣的網頁了（可能要等伺服器更新）。
+之後 如果有更動，回到專案目錄用hugo產生好網頁，接著到GitHub Desktop一樣是用commit和push就可以了。
+參考文件： Build a Personal Website With Github Pages and Hugo  git &amp;amp;ndash;local-branching-on-the-cheap  Adding an existing project to GitHub using the command line  </description>
+    </item>
+    
+  </channel>
+</rss>

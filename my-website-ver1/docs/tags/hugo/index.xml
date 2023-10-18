@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hugo on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/hugo/</link>
+    <description>Recent content in Hugo on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Mon, 06 Sep 2021 11:15:28 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Hugo網站中加入留言板</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/</link>
+      <pubDate>Mon, 06 Sep 2021 11:15:28 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/</guid>
+      <description>前言 留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務Graphcomment  ，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。
+申請帳號以及設定 Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。
+註冊完以後，按下Add site，會出現一個表單：
+ Site name: 一個好記的名字就好，讓你自己容易管理各個網站 Unique ID: 會在之後的部份用到 Website URL: 就是你的網站URL Whitelist domains: 自己決定吧 Supported language: 好像是壞掉了，之後的設定可以再改  勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。
+接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。
+將Graphcomment加入Hugo 打開config.yml，加入：
+params: GraphCommentId: &amp;lt;YOUR_UNIQUE_ID&amp;gt; comments: ture #如果哪天想關掉留言板，改成false就行了 在./layouts/partials中，加入或修改comments.html
+{{ if ne .Params.comments false }} {{ if .Site.Params.GraphCommentId }} {{ partial &amp;quot;graphcomment.html&amp;quot; . }} {{ end }} {{ end }} 
+接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到./layouts/partials，新增graphcomment.html並且貼上那一段程式碼。
+然後找到下面這行：
+graphcommentId: &amp;quot;&amp;lt;YOUR_UNIQUE_ID&amp;gt;&amp;quot;, 把他修改成：
+graphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。</description>
+    </item>
+    
+    <item>
+      <title>Hugo網站的向外連結</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_link/</link>
+      <pubDate>Sun, 05 Sep 2021 15:16:39 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_link/</guid>
+      <description>前言 網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。
+Hugo link模板 Hugo渲染link的模板在：
+./layouts/_default/markup/render-link.html 如果沒有，自己新增一個就可以了。在裡面加上：
+&amp;lt;a href=&amp;quot;{{ .Destination | safeURL }}&amp;quot; {{ with .Title}} title=&amp;quot;{{ . }}&amp;quot; {{ end }} {{ if strings.HasPrefix .Destination &amp;quot;http&amp;quot; }} target=&amp;quot;_blank&amp;quot; {{- /* 在新分頁中開啟連結 */ -}} rel=&amp;quot;noopener&amp;quot; {{- /* 避免XSS攻擊 */ -}} {{ end }}&amp;gt; {{ .Text }} &amp;lt;/a&amp;gt; 參考資料 How to Open Link in New Tab | Hugo  A小編  </description>
+    </item>
+    
+    <item>
+      <title>在Hugo網站中加入Favicon</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_favicon/</link>
+      <pubDate>Sun, 05 Sep 2021 11:33:30 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_favicon/</guid>
+      <description>Favicon是什麼？ 維基百科  是這麼說的：「Favicon是favorites icon的縮寫，亦被稱為website icon（網站圖示）、page icon（頁面圖示）或urlicon（URL圖示）。Favicon是與某個網站或網頁相關聯的圖示。」
+Favicon可以讓網站更容易被記得，或是在Android或iOS的手機中藉由「加入主畫面」的功能產生一個web app。
+Hugo後端的設定 只要在config.yml中加入：
+params: assets: favicon: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; favicon16x16: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; favicon32x32: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; apple_touch_icon: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; safari_pinned_tab: &amp;quot;&amp;lt;link / abs url&amp;gt;&amp;quot; &amp;lt;link / abs url &amp;gt;是你的favicon來源，筆者是使用ICONS8  提供的免費favicon，在這裡直接填入我選擇的favicon的連結。也可以將favicon的檔案儲存在./static裡面，但是可能載入的速度會比較慢。
+可以藉由修改./layouts/partials/head.html更深入的設定favicon的輸出。
+參考文件 Where do I put my favicon with Hugo | stackoverflow  Adding Custom Favicon(s) | PaperMod  A小編  </description>
+    </item>
+    
+    <item>
+      <title>RSS簡介與Newsboat的使用</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/rss_newsboat_hugo/</link>
+      <pubDate>Thu, 02 Sep 2021 17:16:37 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/rss_newsboat_hugo/</guid>
+      <description>什麼是RSS? 下面這個好和弦  的影片裡有詳細的介紹。
+  4:24 開始介紹Newsboat
+安裝Newsboat 如果有安裝snap，可以直接使用
+sudo snap install newsboat 進入程式之後可以按快捷鍵?，查看快捷鍵提示，也可以看#我的Newsboat設定  自訂快捷鍵。
+Distrotube深入解析Newsboat RSS Reader 因為筆者特別喜歡Newsboat的簡潔版面和方便的鍵盤操作，所以另外又找到這個影片，對Newsboat有更進一步的了解。
+  var tag = document.createElement(&#39;script&#39;); tag.src = &#34;https://www.youtube.com/player_api&#34;; var firstScriptTag = document.getElementsByTagName(&#39;script&#39;)[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { ytplayer = new YT.Player(&#39;ytplayer&#39;, { videoId: &#34;CJXdQTGm1jg&#34;, }); console.log(ytplayer); } function playerSeekTo(player, seconds) { player.seekTo(seconds); }  1:46
+如何編輯 urls
+4:06
+ 以下都需要用空格隔開 自訂標題：在網址的後面加上 &amp;ldquo;~&amp;lt;YOUR_CUSTOM_TITLE&amp;gt;&amp;rdquo; 標籤：不需要雙引號，直接輸入你的標籤 註解： &amp;ldquo;!&amp;lt;YOUR_COMMENT&amp;gt;&amp;rdquo;  5:22</description>
+    </item>
+    
+    <item>
+      <title>在Hugo網站中加入Google Analytics</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_ga/</link>
+      <pubDate>Thu, 02 Sep 2021 16:26:01 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_ga/</guid>
+      <description>首先可以參考Google Analytics GA是什麼？  。
+取得「評估ID」之後，在 config.yml 中加上：
+googleAnalytics: &amp;lt;YOUR_TRACKING_ID&amp;gt; 並且在 params 下面加上：
+env: production 接著去點點看你的網站，如果成功的話可以在GA的頁面，看到活動紀錄。</description>
+    </item>
+    
+    <item>
+      <title>在Hugo網站中加入LikeButton</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_likebutton/</link>
+      <pubDate>Tue, 31 Aug 2021 16:10:27 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_likebutton/</guid>
+      <description>不知道什麼是Likecoin的人可以先去看看這篇文章  。
+這篇文章主要是參考Hugo 安裝 LikeCoin 教學 | WANcatServer  。
+Hugo 可以使用自訂 Layout 的方式，在不改變主題的情況下改變網站設計，我們可以透過這個方式在每個文章下放置 LikeButton。
+為了覆寫文章輸出的模板，將 theme 的 layouts 資料夾複製到專案目錄下。
+cp -r theme/&amp;lt;YOUR_THEME&amp;gt;/layouts/ . Hugo 中的 Partial 功能，可以讓你建立小模板，嵌入在頁面中。參考文件  。
+在 layouts 的 partials 資料夾建立 likecoin.html，寫入以下內容。你也可以在這裡加上想給讀者看的說明文字（HTML格式）。
+&amp;lt;iframe class=&amp;quot;LikeCoin&amp;quot; height=&amp;quot;235&amp;quot; src=&amp;quot;https://button.like.co/in/embed/{{ .Site.Params.likerID }}/button?referrer={{ .Permalink }}&amp;quot; width=&amp;quot;100%&amp;quot; frameborder=0&amp;gt;&amp;lt;/iframe&amp;gt; 接下來在 config.yml 的params後面加入
+likerID = &amp;quot;&amp;lt;your liker id&amp;gt;&amp;quot; 接著編輯文章使用的模板，通常是 _default/single.html。這就是一個 Go Template，在你想要的地方插入：
+{{ partial &amp;quot;likecoin.html&amp;quot; . }} 建議插在 {{ .Content }} 後面，Like Button 就會接在文章後面。</description>
+    </item>
+    
+    <item>
+      <title>將網頁發佈到Github Page</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/</link>
+      <pubDate>Wed, 04 Aug 2021 09:14:28 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_on_github_page/</guid>
+      <description>建立Github repository 登入Github的網頁，右上角會看到：
+點擊加號，再點擊New repository：
+出現建立的表單：
+如果是要作為主要的個人網站，Repository name建議可以使用&amp;lt;USERNAME&amp;gt;.github.io。如果你的github repo是命名成&amp;lt;USERNAME&amp;gt;.github.io的話，你的網頁就會發布在&amp;lt;USERNAME&amp;gt;.github.io；如果不是，會在&amp;lt;USERNAME&amp;gt;.github.io/&amp;lt;your_repo&amp;gt;
+勾選Public，只有付費版本可以用Private的repository來建立Github Page。其餘的選項可以自行決定。
+最後按下Create repository。
+上傳到Github repository 如果沒有使用過git，可以先參考Git 教學(1) : Git 的基本使用  ，完成你的git設定。
+這裡以hugo專案預設的存檔路徑./public為例。
+移動到public底下，開始用git管理這個資料夾：
+git init 將所有檔案加入管理：
+git add . 提交修改：
+git commit -m &amp;quot;first commit&amp;quot; 連上自己的github repo，並且做確認：
+git remote add origin https://github.com/&amp;lt;USERNAME&amp;gt;/&amp;lt;your_repo&amp;gt;.git git remote -v 強制把現在的branch變成main。
+git branch -M main 然後安裝並登入GitHub Desktop（因為筆者不會設定登入認證），接著 add local repository，找到public這個資料夾。
+commit之後就可以push到你的Github了。
+查看你的網頁 在完成上面的內容以後，打開你的repo的設定：
+在左邊的欄位中找到Pages：
+會出現綠色提示框：
+如果其他部份都設定成功，點擊提示框中的超連結，就可以看到跟hugo server產生一樣的網頁了（可能要等伺服器更新）。
+之後 如果有更動，回到專案目錄用hugo產生好網頁，接著到GitHub Desktop一樣是用commit和push就可以了。
+參考文件： Build a Personal Website With Github Pages and Hugo  git &amp;amp;ndash;local-branching-on-the-cheap  Adding an existing project to GitHub using the command line  </description>
+    </item>
+    
+    <item>
+      <title>用Hugo製作網頁</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_from_scratch/</link>
+      <pubDate>Tue, 03 Aug 2021 09:53:04 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_from_scratch/</guid>
+      <description>安裝Hugo 這篇以支援snap的Linux版本為例，下載擴充版本的Hugo。
+snap install hugo --channel=extended 其他作業系統可以到 Install Hugo | Hugo  找到相應的指示安裝。
+檢查是否安裝成功：
+hugo version  若要解除安裝：
+snap remove hugo 
+開始網頁專案 確定安裝好Hugo之後，選好要存放網頁專案的目錄，用指令
+ hugo new site mywebsite -f yml  mywebsite可以替換成其他你想要的名字。 -f yml指定使用yml格式，因為yml/yaml的格式比起toml更容易閱讀，根據Papermod的作者adityatelange  的說法  ，所以以下也將採用yml的格式。如果有需要，你可以很容易的找到YML to TOML  的轉換器。   可以看到hugo幫你建立好的檔案架構如下。
+mywebsite/ ├── archetypes │ └── default.md ├── config.yml ├── content ├── data ├── layouts ├── static └── themes 選擇主題 我選擇的主題是PaperMod  ，因為這個主題裡面有很不錯的指引，也有舒服的版面設計。
+移動到mywebsite底下執行以下指令，把PaperMod的資料複製到mywebsite/themes/PaperMod。
+git clone https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

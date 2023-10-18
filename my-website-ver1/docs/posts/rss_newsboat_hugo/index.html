@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>RSS簡介與Newsboat的使用 | blo.blo.blog</title>
+<meta name="keywords" content="RSS, Newsboat, Hugo" />
+<meta name="description" content="什麼是RSS? 下面這個好和弦  的影片裡有詳細的介紹。
+  4:24 開始介紹Newsboat
+安裝Newsboat 如果有安裝snap，可以直接使用
+sudo snap install newsboat 進入程式之後可以按快捷鍵?，查看快捷鍵提示，也可以看#我的Newsboat設定  自訂快捷鍵。
+Distrotube深入解析Newsboat RSS Reader 因為筆者特別喜歡Newsboat的簡潔版面和方便的鍵盤操作，所以另外又找到這個影片，對Newsboat有更進一步的了解。
+  var tag = document.createElement(&#39;script&#39;); tag.src = &#34;https://www.youtube.com/player_api&#34;; var firstScriptTag = document.getElementsByTagName(&#39;script&#39;)[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { ytplayer = new YT.Player(&#39;ytplayer&#39;, { videoId: &#34;CJXdQTGm1jg&#34;, }); console.log(ytplayer); } function playerSeekTo(player, seconds) { player.seekTo(seconds); }  1:46
+如何編輯 urls
+4:06
+ 以下都需要用空格隔開 自訂標題：在網址的後面加上 &ldquo;~&lt;YOUR_CUSTOM_TITLE&gt;&rdquo; 標籤：不需要雙引號，直接輸入你的標籤 註解： &ldquo;!&lt;YOUR_COMMENT&gt;&rdquo;  5:22">
+<meta name="author" content="blo.blo.blog">
+<link rel="canonical" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/rss_newsboat_hugo/" />
+<link crossorigin="anonymous" href="/my-website-ver1/docs/assets/css/stylesheet.min.3a6c8052826ab2d4dd1b3ee36b1885b46a691f0d12eca3b920bd30aed9fba791.css" integrity="sha256-OmyAUoJqstTdGz7jaxiFtGppHw0S7KO5IL0wrtn7p5E=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/my-website-ver1/docs/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="apple-touch-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="mask-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.92.2" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNNJDS4LLV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-YNNJDS4LLV', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="RSS簡介與Newsboat的使用" />
+<meta property="og:description" content="什麼是RSS? 下面這個好和弦  的影片裡有詳細的介紹。
+  4:24 開始介紹Newsboat
+安裝Newsboat 如果有安裝snap，可以直接使用
+sudo snap install newsboat 進入程式之後可以按快捷鍵?，查看快捷鍵提示，也可以看#我的Newsboat設定  自訂快捷鍵。
+Distrotube深入解析Newsboat RSS Reader 因為筆者特別喜歡Newsboat的簡潔版面和方便的鍵盤操作，所以另外又找到這個影片，對Newsboat有更進一步的了解。
+  var tag = document.createElement(&#39;script&#39;); tag.src = &#34;https://www.youtube.com/player_api&#34;; var firstScriptTag = document.getElementsByTagName(&#39;script&#39;)[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { ytplayer = new YT.Player(&#39;ytplayer&#39;, { videoId: &#34;CJXdQTGm1jg&#34;, }); console.log(ytplayer); } function playerSeekTo(player, seconds) { player.seekTo(seconds); }  1:46
+如何編輯 urls
+4:06
+ 以下都需要用空格隔開 自訂標題：在網址的後面加上 &ldquo;~&lt;YOUR_CUSTOM_TITLE&gt;&rdquo; 標籤：不需要雙引號，直接輸入你的標籤 註解： &ldquo;!&lt;YOUR_COMMENT&gt;&rdquo;  5:22" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/rss_newsboat_hugo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-02T17:16:37&#43;08:00" />
+<meta property="article:modified_time" content="2021-09-02T17:16:37&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RSS簡介與Newsboat的使用"/>
+<meta name="twitter:description" content="什麼是RSS? 下面這個好和弦  的影片裡有詳細的介紹。
+  4:24 開始介紹Newsboat
+安裝Newsboat 如果有安裝snap，可以直接使用
+sudo snap install newsboat 進入程式之後可以按快捷鍵?，查看快捷鍵提示，也可以看#我的Newsboat設定  自訂快捷鍵。
+Distrotube深入解析Newsboat RSS Reader 因為筆者特別喜歡Newsboat的簡潔版面和方便的鍵盤操作，所以另外又找到這個影片，對Newsboat有更進一步的了解。
+  var tag = document.createElement(&#39;script&#39;); tag.src = &#34;https://www.youtube.com/player_api&#34;; var firstScriptTag = document.getElementsByTagName(&#39;script&#39;)[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { ytplayer = new YT.Player(&#39;ytplayer&#39;, { videoId: &#34;CJXdQTGm1jg&#34;, }); console.log(ytplayer); } function playerSeekTo(player, seconds) { player.seekTo(seconds); }  1:46
+如何編輯 urls
+4:06
+ 以下都需要用空格隔開 自訂標題：在網址的後面加上 &ldquo;~&lt;YOUR_CUSTOM_TITLE&gt;&rdquo; 標籤：不需要雙引號，直接輸入你的標籤 註解： &ldquo;!&lt;YOUR_COMMENT&gt;&rdquo;  5:22"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "RSS簡介與Newsboat的使用",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/rss_newsboat_hugo/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "RSS簡介與Newsboat的使用",
+  "name": "RSS簡介與Newsboat的使用",
+  "description": "什麼是RSS? 下面這個好和弦  的影片裡有詳細的介紹。\n  4:24 開始介紹Newsboat\n安裝Newsboat 如果有安裝snap，可以直接使用\nsudo snap install newsboat 進入程式之後可以按快捷鍵?，查看快捷鍵提示，也可以看#我的Newsboat設定  自訂快捷鍵。\nDistrotube深入解析Newsboat RSS Reader 因為筆者特別喜歡Newsboat的簡潔版面和方便的鍵盤操作，所以另外又找到這個影片，對Newsboat有更進一步的了解。\n  var tag = document.createElement('script'); tag.src = \"https://www.youtube.com/player_api\"; var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { ytplayer = new YT.Player('ytplayer', { videoId: \"CJXdQTGm1jg\", }); console.log(ytplayer); } function playerSeekTo(player, seconds) { player.seekTo(seconds); }  1:46\n如何編輯 urls\n4:06\n 以下都需要用空格隔開 自訂標題：在網址的後面加上 \u0026ldquo;~\u0026lt;YOUR_CUSTOM_TITLE\u0026gt;\u0026rdquo; 標籤：不需要雙引號，直接輸入你的標籤 註解： \u0026ldquo;!\u0026lt;YOUR_COMMENT\u0026gt;\u0026rdquo;  5:22",
+  "keywords": [
+    "RSS", "Newsboat", "Hugo"
+  ],
+  "articleBody": "什麼是RSS? 下面這個好和弦  的影片裡有詳細的介紹。\n  4:24 開始介紹Newsboat\n安裝Newsboat 如果有安裝snap，可以直接使用\nsudo snap install newsboat 進入程式之後可以按快捷鍵?，查看快捷鍵提示，也可以看#我的Newsboat設定  自訂快捷鍵。\nDistrotube深入解析Newsboat RSS Reader 因為筆者特別喜歡Newsboat的簡潔版面和方便的鍵盤操作，所以另外又找到這個影片，對Newsboat有更進一步的了解。\n  var tag = document.createElement('script'); tag.src = \"https://www.youtube.com/player_api\"; var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { ytplayer = new YT.Player('ytplayer', { videoId: \"CJXdQTGm1jg\", }); console.log(ytplayer); } function playerSeekTo(player, seconds) { player.seekTo(seconds); }  1:46\n如何編輯 urls\n4:06\n 以下都需要用空格隔開 自訂標題：在網址的後面加上 “~” 標籤：不需要雙引號，直接輸入你的標籤 註解： “!”  5:22\nyoutube channel rss feed\n https://www.youtube.com/feeds/videos.xml?channel_id=   https://www.youtube.com/feeds/videos.xml?playlist_id=    7:55\n用comment做分類\n9:33\n更多rss\ngitlab github 在網址後面加上.atom\nsourceforge 在網址後加上/feed\n我的Newsboat設定 因為我是用snap下載，所以我的設定路徑是在~snap/newsboat/4780/.newsboat/config，以下是設定檔的內容：\n# Ubuntu好像只能這樣設定，會用預設的瀏覽器打開 browser \"xdg-open\" 可以參考這個  。\n找到網站或Podcast的RSS連結 大部分有提供RSS的部落格，都會有一個類似wifi的圖示，那個就是他的RSS連結。如果沒有可以嘗試檢視網頁原始碼，搜尋rss、atom、xml或是url，有很大的機率可以找到。\nPodcast都會用RSS做推播，所以理論上都可以找到各個Podcast的RSS連結。可以用同樣的方法找到RSS連結，但是筆者在Spotify上嘗試過卻找不到。\nPtt看板的RSS連結 https://www.ptt.cc/atom/.xml Hugo網站的RSS Hugo的RSS模板在layouts/_default/rss.xml。\n產生出來的RSS連結會在https:///index.xml。\n記得把我的部落格  加到你的RSS閱讀器喔～～\n",
+  "wordCount" : "95",
+  "inLanguage": "zh-hant",
+  "datePublished": "2021-09-02T17:16:37+08:00",
+  "dateModified": "2021-09-02T17:16:37+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "blo.blo.blog"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/rss_newsboat_hugo/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "blo.blo.blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://kkkeevvvin.github.io/my-website-ver1/docs" accesskey="h" title="blo.blo.blog (Alt + H)">blo.blo.blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/archives" title="文章列表">
+                    <span>文章列表</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/categories/" title="分類">
+                    <span>分類</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/" title="標籤">
+                    <span>標籤</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/search" title="搜尋">
+                    <span>搜尋</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/about" title="關於我">
+                    <span>關於我</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://kkkeevvvin.github.io/my-website-ver1/docs">Home</a>&nbsp;»&nbsp;<a href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/">Posts</a></div>
+    <h1 class="post-title">
+      RSS簡介與Newsboat的使用
+    </h1>
+    <div class="post-meta">September 2, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" Title="click me">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e4%bb%80%e9%ba%bc%e6%98%afrss" aria-label="什麼是RSS?">什麼是RSS?</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%9dnewsboat" aria-label="安裝Newsboat">安裝Newsboat</a></li>
+                <li>
+                    <a href="#distrotube%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90newsboat-rss-reader" aria-label="Distrotube深入解析Newsboat RSS Reader">Distrotube深入解析Newsboat RSS Reader</a></li>
+                <li>
+                    <a href="#%e6%88%91%e7%9a%84newsboat%e8%a8%ad%e5%ae%9a" aria-label="我的Newsboat設定">我的Newsboat設定</a></li>
+                <li>
+                    <a href="#%e6%89%be%e5%88%b0%e7%b6%b2%e7%ab%99%e6%88%96podcast%e7%9a%84rss%e9%80%a3%e7%b5%90" aria-label="找到網站或Podcast的RSS連結">找到網站或Podcast的RSS連結</a></li>
+                <li>
+                    <a href="#ptt%e7%9c%8b%e6%9d%bf%e7%9a%84rss%e9%80%a3%e7%b5%90" aria-label="Ptt看板的RSS連結">Ptt看板的RSS連結</a></li>
+                <li>
+                    <a href="#hugo%e7%b6%b2%e7%ab%99%e7%9a%84rss" aria-label="Hugo網站的RSS">Hugo網站的RSS</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h3 id="什麼是rss">什麼是RSS?<a hidden class="anchor" aria-hidden="true" href="#什麼是rss">#</a></h3>
+<p>下面這個<a href="https://nicechord.com/"
+   
+   
+   target="_blank"rel="noopener">
+    好和弦
+</a>
+
+的影片裡有詳細的介紹。</p>
+<p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;"
+        sandbox="allow-same-origin allow-scripts allow-popups"
+        src="https://wiwi.video/videos/embed/b2fe55c2-f962-4c76-9134-13c246b1aa30"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+
+<br>
+4:24 開始介紹Newsboat</p>
+<h3 id="安裝newsboat">安裝Newsboat<a hidden class="anchor" aria-hidden="true" href="#安裝newsboat">#</a></h3>
+<p>如果有安裝<code>snap</code>，可以直接使用</p>
+<pre tabindex="0"><code>sudo snap install newsboat
+</code></pre><p>進入程式之後可以按快捷鍵<code>?</code>，查看快捷鍵提示，也可以看<a href="/posts/rss_newsboat_hugo/#hugo%E7%B6%B2%E7%AB%99%E7%9A%84rss"
+   
+   >
+    #我的Newsboat設定
+</a>
+
+自訂快捷鍵。</p>
+<h3 id="distrotube深入解析newsboat-rss-reader">Distrotube深入解析Newsboat RSS Reader<a hidden class="anchor" aria-hidden="true" href="#distrotube深入解析newsboat-rss-reader">#</a></h3>
+<p>因為筆者特別喜歡Newsboat的簡潔版面和方便的鍵盤操作，所以另外又找到這個影片，對Newsboat有更進一步的了解。</p>
+
+
+
+<div id="ytplayer"></div>
+
+<script>
+  
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  
+  
+  var player;
+  function onYouTubePlayerAPIReady() {
+    ytplayer = new YT.Player('ytplayer', {
+      videoId: "CJXdQTGm1jg",
+    });
+    console.log(ytplayer);
+  }
+  function playerSeekTo(player, seconds) {
+        player.seekTo(seconds);
+  }
+</script>
+
+<p><a href="#" onclick="playerSeekTo(ytplayer, 106); return false;">1:46</a></p>
+<p>如何編輯 <code>urls</code></p>
+<p><a href="#" onclick="playerSeekTo(ytplayer, 246); return false;">4:06</a></p>
+<ul>
+<li>以下都需要用空格隔開</li>
+<li>自訂標題：在網址的後面加上 &ldquo;~&lt;YOUR_CUSTOM_TITLE&gt;&rdquo;</li>
+<li>標籤：不需要雙引號，直接輸入你的標籤</li>
+<li>註解： &ldquo;!&lt;YOUR_COMMENT&gt;&rdquo;</li>
+</ul>
+<p><a href="#" onclick="playerSeekTo(ytplayer, 322); return false;">5:22</a></p>
+<p>youtube channel rss feed</p>
+<ul>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id="
+   
+   
+   target="_blank"rel="noopener">
+    https://www.youtube.com/feeds/videos.xml?channel_id=
+</a>
+
+</li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?playlist_id="
+   
+   
+   target="_blank"rel="noopener">
+    https://www.youtube.com/feeds/videos.xml?playlist_id=
+</a>
+
+</li>
+</ul>
+<p><a href="#" onclick="playerSeekTo(ytplayer, 475); return false;">7:55</a></p>
+<p>用comment做分類</p>
+<p><a href="#" onclick="playerSeekTo(ytplayer, 573); return false;">9:33</a></p>
+<p>更多rss</p>
+<p>gitlab github 在網址後面加上<code>.atom</code></p>
+<p>sourceforge 在網址後加上<code>/feed</code></p>
+<h3 id="我的newsboat設定">我的Newsboat設定<a hidden class="anchor" aria-hidden="true" href="#我的newsboat設定">#</a></h3>
+<p>因為我是用<code>snap</code>下載，所以我的設定路徑是在<code>~snap/newsboat/4780/.newsboat/config</code>，以下是設定檔的內容：</p>
+<pre tabindex="0"><code># Ubuntu好像只能這樣設定，會用預設的瀏覽器打開
+browser &quot;xdg-open&quot; 
+</code></pre><p>可以參考<a href="https://gist.github.com/cirrusUK/f0c880efc242e4751df9"
+   
+   
+   target="_blank"rel="noopener">
+    這個
+</a>
+
+。</p>
+<h3 id="找到網站或podcast的rss連結">找到網站或Podcast的RSS連結<a hidden class="anchor" aria-hidden="true" href="#找到網站或podcast的rss連結">#</a></h3>
+<p>大部分有提供RSS的部落格，都會有一個類似wifi的圖示，那個就是他的RSS連結。如果沒有可以嘗試檢視網頁原始碼，搜尋<code>rss</code>、<code>atom</code>、<code>xml</code>或是<code>url</code>，有很大的機率可以找到。</p>
+<p>Podcast都會用RSS做推播，所以理論上都可以找到各個Podcast的RSS連結。可以用同樣的方法找到RSS連結，但是筆者在Spotify上嘗試過卻找不到。</p>
+<h3 id="ptt看板的rss連結">Ptt看板的RSS連結<a hidden class="anchor" aria-hidden="true" href="#ptt看板的rss連結">#</a></h3>
+<pre tabindex="0"><code>https://www.ptt.cc/atom/&lt;BROAD_NAME&gt;.xml
+</code></pre><h3 id="hugo網站的rss">Hugo網站的RSS<a hidden class="anchor" aria-hidden="true" href="#hugo網站的rss">#</a></h3>
+<p>Hugo的RSS模板在<code>layouts/_default/rss.xml</code>。</p>
+<p>產生出來的RSS連結會在<code>https://&lt;WEBSITE_URLS&gt;/index.xml</code>。</p>
+<p>記得把<a href="/index.xml"
+   
+   >
+    我的部落格
+</a>
+
+加到你的RSS閱讀器喔～～</p>
+
+
+    
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/kkkevin/button?referrer=https%3a%2f%2fkkkeevvvin.github.io%2fmy-website-ver1%2fdocs%2fposts%2frss_newsboat_hugo%2f" width="100%" frameborder=0></iframe>
+
+  </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/rss/">RSS</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/newsboat/">Newsboat</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/hugo/">Hugo</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_favicon/">
+    <span class="title">« </span>
+    <br>
+    <span>在Hugo網站中加入Favicon</span>
+  </a>
+  <a class="next" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_ga/">
+    <span class="title"> »</span>
+    <br>
+    <span>在Hugo網站中加入Google Analytics</span>
+  </a>
+</nav>
+
+    
+    
+        <div id="graphcomment"></div>
+<script type="text/javascript">
+
+   
+
+  var __semio__params = {
+    graphcommentId: "blobloblog", 
+
+    behaviour: {
+      
+      uid: "/my-website-ver1/docs/posts/rss_newsboat_hugo/", 
+      telemetricThroughCmp: true
+    },
+
+    
+
+  }
+
+   
+
+  function __semio__onload() {
+    __semio__gc_graphlogin(__semio__params)
+  }
+
+
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.onload = __semio__onload; gc.defer = true; gc.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+
+
+</script>
+
+    
+
+
+  </footer>
+
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2023 <a href="https://kkkeevvvin.github.io/my-website-ver1/docs">blo.blo.blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onclick = function () {
+      
+    }
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

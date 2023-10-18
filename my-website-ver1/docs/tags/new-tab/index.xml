@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>New tab on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/new-tab/</link>
+    <description>Recent content in New tab on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Sun, 05 Sep 2021 15:16:39 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/new-tab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo網站的向外連結</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_link/</link>
+      <pubDate>Sun, 05 Sep 2021 15:16:39 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_link/</guid>
+      <description>前言 網站中少不了的就是超連結(Hyperlink)，網站中的連結也會影響搜尋引擎優化(Search Engine Optimization)，但是這隱含了網站被跨網站腳本攻擊(XSS)的可能性。
+Hugo link模板 Hugo渲染link的模板在：
+./layouts/_default/markup/render-link.html 如果沒有，自己新增一個就可以了。在裡面加上：
+&amp;lt;a href=&amp;quot;{{ .Destination | safeURL }}&amp;quot; {{ with .Title}} title=&amp;quot;{{ . }}&amp;quot; {{ end }} {{ if strings.HasPrefix .Destination &amp;quot;http&amp;quot; }} target=&amp;quot;_blank&amp;quot; {{- /* 在新分頁中開啟連結 */ -}} rel=&amp;quot;noopener&amp;quot; {{- /* 避免XSS攻擊 */ -}} {{ end }}&amp;gt; {{ .Text }} &amp;lt;/a&amp;gt; 參考資料 How to Open Link in New Tab | Hugo  A小編  </description>
+    </item>
+    
+  </channel>
+</rss>
