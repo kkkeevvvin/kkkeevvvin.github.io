@@ -133,6 +133,28 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>在Hugo網站中加入留言板</h2>
+  </header>
+  <section class="entry-content">
+    <p>前言 留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務Graphcomment  ，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。
+申請帳號以及設定 Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。
+註冊完以後，按下Add site，會出現一個表單：
+ Site name: 一個好記的名字就好，讓你自己容易管理各個網站 Unique ID: 會在之後的部份用到 Website URL: 就是你的網站URL Whitelist domains: 自己決定吧 Supported language: 好像是壞掉了，之後的設定可以再改  勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。
+接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。
+將Graphcomment加入Hugo 打開config.yml，加入：
+params: GraphCommentId: &lt;YOUR_UNIQUE_ID&gt; comments: ture #如果哪天想關掉留言板，改成false就行了 在./layouts/partials中，加入或修改comments.html
+{{ if ne .Params.comments false }} {{ if .Site.Params.GraphCommentId }} {{ partial &#34;graphcomment.html&#34; . }} {{ end }} {{ end }} 
+接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到./layouts/partials，新增graphcomment.html並且貼上那一段程式碼。
+然後找到下面這行：
+graphcommentId: &#34;&lt;YOUR_UNIQUE_ID&gt;&#34;, 把他修改成：
+graphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。...</p>
+  </section>
+  <footer class="entry-footer">September 6, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
+  <a class="entry-link" aria-label="post link to 在Hugo網站中加入留言板" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Hugo網站的向外連結</h2>
   </header>
   <section class="entry-content">
@@ -192,25 +214,6 @@ env: production 接著去點點看你的網站，如果成功的話可以在GA�
   </section>
   <footer class="entry-footer">September 2, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
   <a class="entry-link" aria-label="post link to 在Hugo網站中加入Google Analytics" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_ga/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>在Hugo網站中加入LikeButton</h2>
-  </header>
-  <section class="entry-content">
-    <p>不知道什麼是Likecoin的人可以先去看看這篇文章  。
-這篇文章主要是參考Hugo 安裝 LikeCoin 教學 | WANcatServer  。
-Hugo 可以使用自訂 Layout 的方式，在不改變主題的情況下改變網站設計，我們可以透過這個方式在每個文章下放置 LikeButton。
-為了覆寫文章輸出的模板，將 theme 的 layouts 資料夾複製到專案目錄下。
-cp -r theme/&lt;YOUR_THEME&gt;/layouts/ . Hugo 中的 Partial 功能，可以讓你建立小模板，嵌入在頁面中。參考文件  。
-在 layouts 的 partials 資料夾建立 likecoin.html，寫入以下內容。你也可以在這裡加上想給讀者看的說明文字（HTML格式）。
-&lt;iframe class=&#34;LikeCoin&#34; height=&#34;235&#34; src=&#34;https://button.like.co/in/embed/{{ .Site.Params.likerID }}/button?referrer={{ .Permalink }}&#34; width=&#34;100%&#34; frameborder=0&gt;&lt;/iframe&gt; 接下來在 config.yml 的params後面加入
-likerID = &#34;&lt;your liker id&gt;&#34; 接著編輯文章使用的模板，通常是 _default/single.html。這就是一個 Go Template，在你想要的地方插入：
-{{ partial &#34;likecoin.html&#34; . }} 建議插在 {{ .Content }} 後面，Like Button 就會接在文章後面。...</p>
-  </section>
-  <footer class="entry-footer">August 31, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
-  <a class="entry-link" aria-label="post link to 在Hugo網站中加入LikeButton" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_likebutton/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

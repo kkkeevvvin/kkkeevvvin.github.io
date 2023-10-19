@@ -133,6 +133,25 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>在Hugo網站中加入LikeButton</h2>
+  </header>
+  <section class="entry-content">
+    <p>不知道什麼是Likecoin的人可以先去看看這篇文章  。
+這篇文章主要是參考Hugo 安裝 LikeCoin 教學 | WANcatServer  。
+Hugo 可以使用自訂 Layout 的方式，在不改變主題的情況下改變網站設計，我們可以透過這個方式在每個文章下放置 LikeButton。
+為了覆寫文章輸出的模板，將 theme 的 layouts 資料夾複製到專案目錄下。
+cp -r theme/&lt;YOUR_THEME&gt;/layouts/ . Hugo 中的 Partial 功能，可以讓你建立小模板，嵌入在頁面中。參考文件  。
+在 layouts 的 partials 資料夾建立 likecoin.html，寫入以下內容。你也可以在這裡加上想給讀者看的說明文字（HTML格式）。
+&lt;iframe class=&#34;LikeCoin&#34; height=&#34;235&#34; src=&#34;https://button.like.co/in/embed/{{ .Site.Params.likerID }}/button?referrer={{ .Permalink }}&#34; width=&#34;100%&#34; frameborder=0&gt;&lt;/iframe&gt; 接下來在 config.yml 的params後面加入
+likerID = &#34;&lt;your liker id&gt;&#34; 接著編輯文章使用的模板，通常是 _default/single.html。這就是一個 Go Template，在你想要的地方插入：
+{{ partial &#34;likecoin.html&#34; . }} 建議插在 {{ .Content }} 後面，Like Button 就會接在文章後面。...</p>
+  </section>
+  <footer class="entry-footer">August 31, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
+  <a class="entry-link" aria-label="post link to 在Hugo網站中加入LikeButton" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_likebutton/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>將網頁發佈到Github Page</h2>
   </header>
   <section class="entry-content">

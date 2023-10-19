@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Typing Test on blo.blo.blog</title>
-    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/typing-test/</link>
-    <description>Recent content in Typing Test on blo.blo.blog</description>
+    <title>Future on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/future/</link>
+    <description>Recent content in Future on blo.blo.blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Thu, 19 Oct 2023 22:05:28 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/typing-test/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Oct 2023 22:05:28 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/future/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[隨筆]關於打字練習網站</title>
       <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/about-typing-test/</link>
@@ -28,22 +28,6 @@ typings.gg  全部都是用 JavaScript 刻出來的。最新的 issue  有人在
 Vision Pro 隨然沒有實體鍵盤，但還是有虛擬鍵盤，用攝影機去偵測手的位置。
 如果未來變成偵測腦波來輸入的話？電競變成腦波大賽？
 查了才發現 2018 年就有人在想這件事了，The future of typing doesn’t involve a keyboard  ，還未細讀。</description>
-    </item>
-    
-    <item>
-      <title>[隨筆] 把舊網站重新上線</title>
-      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/</link>
-      <pubDate>Wed, 18 Oct 2023 16:21:54 +0800</pubDate>
-      
-      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/republish-old-web/</guid>
-      <description>昨天  嘗試了把這個舊網站重新上線未果。
-今天花了不少時間終於發現問題了！因為使用hugo指令產生靜態網頁的結果之間的超連結都會以發布的網址最為 baseURL，所以在本機端只能利用hugo server指令預覽結果。
-另外，將網頁發佈到 Github Page 時，在完成 Push 之後需要一段時間資料才會被放到 Server 上，所以會有一段時間差才會完成更新！這個現象似乎有在計網概提過 🤔
-&amp;hellip;
-這篇文章的最前面用到的超連結，是今天發現的小東西！
-在 Hugo 的 markdown 文件中如果需要連結其他文件的話可以使用：
-{{ &amp;lt;ref &amp;quot;&amp;lt;filename&amp;gt;.md&amp;quot;&amp;gt; }} more detail  &amp;hellip;
-最近，我囫圇吞棗的在 Codecademy 上學了不少東西，但是發現 HTML 和 CSS 還是不太熟悉，再加上 Javascript 的話，可能就會一團混亂，雖然課程中有安排 project，但我覺得練習量還是不夠。因為最近常在用Monkeytype  和keybr  練習打字，也有找到 Microsoft 的課程Web-Dev-For-Beginners  其中有個部分就是實作簡單的 typing test。大概會用個幾天把這個 side project 做出來，也應該會寫點記錄。</description>
     </item>
     
   </channel>

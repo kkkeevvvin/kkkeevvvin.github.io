@@ -170,6 +170,31 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>[隨筆]關於打字練習網站</h2>
+  </header>
+  <section class="entry-content">
+    <p>昨天後來就開始做我的打字練習網站MyType  。發現昨天說的課程  內容挺詳細的，其實只要把東西複製貼上就做完了八成，原本的 JavaScript 就已經能動了，剩下的就是寫 CSS 讓版面好看一點，微調一下 JavaScript。
+認真看了下 git log，做了比較有用的事有：
+ 讓輸入錯誤的字顯示紅色 關掉輸入框的 autocomplete 結束時把 highlight 的單字還原，清空輸入框 從第一個輸入開始計時，若重新開始時重設計時器 還算好看的排版  心得是怎麼才寫一點點 code，整陀 code 就亂七八糟。
+…
+有人跟我說可以做中文的打字練習，然後有鍵盤的。去參考了其他網站，發現這是要鍵盤一顆一顆自己刻出來，還是有什麼聰明的方法我還沒想到… 或許可以用 CSS Grid?
+…
+看了看其他打字練習網站之後的想法：
+中文打字的介面都好醜(無意冒犯…)，感覺有一些時間沒人在做這個東西。
+typings.gg  全部都是用 JavaScript 刻出來的。最新的 issue  有人在問這個 project 還活著嗎，有人回說 owner 超久沒上線了，其他活人也都跑去 MonkeyType。
+因為MonkeyType  和Keybr.com  都是用 TypeScript，查了一下是跟 JavaScipt 有點像的東西。感覺我可以先參考 typings.gg，多做一些功能，看看 code style 有沒有可以學習的地方，之後再看看吧。
+…
+打字練習還有市場嗎？除了上班族和工程師，有什麼人會需要常常用到鍵盤，而且還需要速度快？
+Vision Pro 隨然沒有實體鍵盤，但還是有虛擬鍵盤，用攝影機去偵測手的位置。
+如果未來變成偵測腦波來輸入的話？電競變成腦波大賽？
+查了才發現 2018 年就有人在想這件事了，The future of typing doesn’t involve a keyboard  ，還未細讀。</p>
+  </section>
+  <footer class="entry-footer">October 19, 2023&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
+  <a class="entry-link" aria-label="post link to [隨筆]關於打字練習網站" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/about-typing-test/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>[隨筆] 把舊網站重新上線</h2>
   </header>
   <section class="entry-content">
@@ -264,28 +289,6 @@ cd entrance/ 祝大家玩的愉快 ଘ(੭ˊᵕˋ)੭* ੈ✩
   </section>
   <footer class="entry-footer">September 9, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
   <a class="entry-link" aria-label="post link to [遊戲] Bashcrawl介紹" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/bashcrawl/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>在Hugo網站中加入留言板</h2>
-  </header>
-  <section class="entry-content">
-    <p>前言 留言板在部落格中是不可或缺的一部分，是讀者回饋作者最直接的方式。因為筆者是目前沒有太大的經濟能力，也沒有架設自己的伺服器，所以選用了有免費試用的第三方服務Graphcomment  ，每個月有1,000,000的流量，對小網站來說應該是很夠用了。如果之後要換平台，它也可以匯出所有的留言。
-申請帳號以及設定 Graphcomment可以直接用Google、Twitter或Facebook登入，也可以用電子郵件註冊。
-註冊完以後，按下Add site，會出現一個表單：
- Site name: 一個好記的名字就好，讓你自己容易管理各個網站 Unique ID: 會在之後的部份用到 Website URL: 就是你的網站URL Whitelist domains: 自己決定吧 Supported language: 好像是壞掉了，之後的設定可以再改  勾選我同意服務條款，按下送出，就完成了一個網站留言版後端的建立了。
-接著進入設定，不要點小齒輪圖示，直接點剛才設定的Site name，會進入這個網站留言版後端。點選SETTING，進入Language的頁面選擇留言板的語言，因為沒有繁體中文，所以我是選英文。在Customization頁面中可以調整留言板的顏色，其他的設定也都可以自己調整看看。這個頁面記得先保留，等一下還會用到。
-將Graphcomment加入Hugo 打開config.yml，加入：
-params: GraphCommentId: &lt;YOUR_UNIQUE_ID&gt; comments: ture #如果哪天想關掉留言板，改成false就行了 在./layouts/partials中，加入或修改comments.html
-{{ if ne .Params.comments false }} {{ if .Site.Params.GraphCommentId }} {{ partial &#34;graphcomment.html&#34; . }} {{ end }} {{ end }} 
-接著到留言板後端的SETUP，在側邊連點選Universal code，下面有一些選項可以自行調整，然後複製那一段程式碼，回到./layouts/partials，新增graphcomment.html並且貼上那一段程式碼。
-然後找到下面這行：
-graphcommentId: &#34;&lt;YOUR_UNIQUE_ID&gt;&#34;, 把他修改成：
-graphcommentId: {{ .Site.Params.GraphCommentId }}, 記得不要漏掉最後的逗號，因為後面還有其他程式碼需要用逗號隔開。...</p>
-  </section>
-  <footer class="entry-footer">September 6, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog</footer>
-  <a class="entry-link" aria-label="post link to 在Hugo網站中加入留言板" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/hugo_graphcomment/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
