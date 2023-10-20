@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>IME on blo.blo.blog</title>
+    <link>https://kkkeevvvin.github.io/my-website-ver1/docs/tags/ime/</link>
+    <description>Recent content in IME on blo.blo.blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Fri, 20 Oct 2023 17:19:58 +0800</lastBuildDate><atom:link href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/ime/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[隨筆] 中文輸入法好難</title>
+      <link>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/chinese-ime/</link>
+      <pubDate>Fri, 20 Oct 2023 17:19:58 +0800</pubDate>
+      
+      <guid>https://kkkeevvvin.github.io/my-website-ver1/docs/posts/chinese-ime/</guid>
+      <description>繼續關於打字練習網站的 project，今日進度：
+ 精簡計時器的變數，改用一次性的 EventListener 來啟動 將段落產生獨立成 module 把名言佳句放到 json 檔中 調整程式架構，減少 main.js 中複雜的 function 中文輸入法令人頭疼  又是感覺花了很多時間，但沒做什麼的一天&amp;hellip;
+&amp;hellip;
+輸入法引擎/編輯器：Input Method Engine/Editor
+&amp;hellip;
+因為我用的中文輸入法是注音，會有需要選字的情況。
+如果太早做檢查，看到有符合的字就先清空輸入暫存，就 highlight 下一個字的話，再輸入下一個字時，前一個還在選字狀態的字會冒出來。
+嘗試用 EventListener 去檢查 keypress，發現打字完選字再按下 Enter，這段期間都會被輸入法屏蔽；如果是看 input element 的 input，包括注音和還在選字狀態的都可以 log 出來，還會丟出來一個非常詳細的 object，一開始笨笨的一項一項比較，後來才發現應該有文件可以看：MDN | HTMLElement: input event  BTW monkeytype 沒有中文 quote 的模式，其他我看的幾個網站都是整行或段打完按下 Enter 才做檢查。能做出來的話應該有料吧？</description>
+    </item>
+    
+  </channel>
+</rss>

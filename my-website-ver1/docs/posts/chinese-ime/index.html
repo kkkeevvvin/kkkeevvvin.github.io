@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[隨筆] 中文輸入法好難 | blo.blo.blog</title>
+<meta name="keywords" content="IME, JavaScript, EventListener" />
+<meta name="description" content="繼續關於打字練習網站的 project，今日進度：
+ 精簡計時器的變數，改用一次性的 EventListener 來啟動 將段落產生獨立成 module 把名言佳句放到 json 檔中 調整程式架構，減少 main.js 中複雜的 function 中文輸入法令人頭疼  又是感覺花了很多時間，但沒做什麼的一天&hellip;
+&hellip;
+輸入法引擎/編輯器：Input Method Engine/Editor
+&hellip;
+因為我用的中文輸入法是注音，會有需要選字的情況。
+如果太早做檢查，看到有符合的字就先清空輸入暫存，就 highlight 下一個字的話，再輸入下一個字時，前一個還在選字狀態的字會冒出來。
+嘗試用 EventListener 去檢查 keypress，發現打字完選字再按下 Enter，這段期間都會被輸入法屏蔽；如果是看 input element 的 input，包括注音和還在選字狀態的都可以 log 出來，還會丟出來一個非常詳細的 object，一開始笨笨的一項一項比較，後來才發現應該有文件可以看：MDN | HTMLElement: input event  BTW monkeytype 沒有中文 quote 的模式，其他我看的幾個網站都是整行或段打完按下 Enter 才做檢查。能做出來的話應該有料吧？">
+<meta name="author" content="blo.blo.blog">
+<link rel="canonical" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/chinese-ime/" />
+<link crossorigin="anonymous" href="/my-website-ver1/docs/assets/css/stylesheet.min.3a6c8052826ab2d4dd1b3ee36b1885b46a691f0d12eca3b920bd30aed9fba791.css" integrity="sha256-OmyAUoJqstTdGz7jaxiFtGppHw0S7KO5IL0wrtn7p5E=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/my-website-ver1/docs/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="apple-touch-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<link rel="mask-icon" href="https://img.icons8.com/cotton/512/000000/sun--v3.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.92.2" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNNJDS4LLV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-YNNJDS4LLV', { 'anonymize_ip': false });
+}
+</script>
+<meta property="og:title" content="[隨筆] 中文輸入法好難" />
+<meta property="og:description" content="繼續關於打字練習網站的 project，今日進度：
+ 精簡計時器的變數，改用一次性的 EventListener 來啟動 將段落產生獨立成 module 把名言佳句放到 json 檔中 調整程式架構，減少 main.js 中複雜的 function 中文輸入法令人頭疼  又是感覺花了很多時間，但沒做什麼的一天&hellip;
+&hellip;
+輸入法引擎/編輯器：Input Method Engine/Editor
+&hellip;
+因為我用的中文輸入法是注音，會有需要選字的情況。
+如果太早做檢查，看到有符合的字就先清空輸入暫存，就 highlight 下一個字的話，再輸入下一個字時，前一個還在選字狀態的字會冒出來。
+嘗試用 EventListener 去檢查 keypress，發現打字完選字再按下 Enter，這段期間都會被輸入法屏蔽；如果是看 input element 的 input，包括注音和還在選字狀態的都可以 log 出來，還會丟出來一個非常詳細的 object，一開始笨笨的一項一項比較，後來才發現應該有文件可以看：MDN | HTMLElement: input event  BTW monkeytype 沒有中文 quote 的模式，其他我看的幾個網站都是整行或段打完按下 Enter 才做檢查。能做出來的話應該有料吧？" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/chinese-ime/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-20T17:19:58&#43;08:00" />
+<meta property="article:modified_time" content="2023-10-20T17:19:58&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[隨筆] 中文輸入法好難"/>
+<meta name="twitter:description" content="繼續關於打字練習網站的 project，今日進度：
+ 精簡計時器的變數，改用一次性的 EventListener 來啟動 將段落產生獨立成 module 把名言佳句放到 json 檔中 調整程式架構，減少 main.js 中複雜的 function 中文輸入法令人頭疼  又是感覺花了很多時間，但沒做什麼的一天&hellip;
+&hellip;
+輸入法引擎/編輯器：Input Method Engine/Editor
+&hellip;
+因為我用的中文輸入法是注音，會有需要選字的情況。
+如果太早做檢查，看到有符合的字就先清空輸入暫存，就 highlight 下一個字的話，再輸入下一個字時，前一個還在選字狀態的字會冒出來。
+嘗試用 EventListener 去檢查 keypress，發現打字完選字再按下 Enter，這段期間都會被輸入法屏蔽；如果是看 input element 的 input，包括注音和還在選字狀態的都可以 log 出來，還會丟出來一個非常詳細的 object，一開始笨笨的一項一項比較，後來才發現應該有文件可以看：MDN | HTMLElement: input event  BTW monkeytype 沒有中文 quote 的模式，其他我看的幾個網站都是整行或段打完按下 Enter 才做檢查。能做出來的話應該有料吧？"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "[隨筆] 中文輸入法好難",
+      "item": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/chinese-ime/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[隨筆] 中文輸入法好難",
+  "name": "[隨筆] 中文輸入法好難",
+  "description": "繼續關於打字練習網站的 project，今日進度：\n 精簡計時器的變數，改用一次性的 EventListener 來啟動 將段落產生獨立成 module 把名言佳句放到 json 檔中 調整程式架構，減少 main.js 中複雜的 function 中文輸入法令人頭疼  又是感覺花了很多時間，但沒做什麼的一天\u0026hellip;\n\u0026hellip;\n輸入法引擎/編輯器：Input Method Engine/Editor\n\u0026hellip;\n因為我用的中文輸入法是注音，會有需要選字的情況。\n如果太早做檢查，看到有符合的字就先清空輸入暫存，就 highlight 下一個字的話，再輸入下一個字時，前一個還在選字狀態的字會冒出來。\n嘗試用 EventListener 去檢查 keypress，發現打字完選字再按下 Enter，這段期間都會被輸入法屏蔽；如果是看 input element 的 input，包括注音和還在選字狀態的都可以 log 出來，還會丟出來一個非常詳細的 object，一開始笨笨的一項一項比較，後來才發現應該有文件可以看：MDN | HTMLElement: input event  BTW monkeytype 沒有中文 quote 的模式，其他我看的幾個網站都是整行或段打完按下 Enter 才做檢查。能做出來的話應該有料吧？",
+  "keywords": [
+    "IME", "JavaScript", "EventListener"
+  ],
+  "articleBody": "繼續關於打字練習網站的 project，今日進度：\n 精簡計時器的變數，改用一次性的 EventListener 來啟動 將段落產生獨立成 module 把名言佳句放到 json 檔中 調整程式架構，減少 main.js 中複雜的 function 中文輸入法令人頭疼  又是感覺花了很多時間，但沒做什麼的一天…\n…\n輸入法引擎/編輯器：Input Method Engine/Editor\n…\n因為我用的中文輸入法是注音，會有需要選字的情況。\n如果太早做檢查，看到有符合的字就先清空輸入暫存，就 highlight 下一個字的話，再輸入下一個字時，前一個還在選字狀態的字會冒出來。\n嘗試用 EventListener 去檢查 keypress，發現打字完選字再按下 Enter，這段期間都會被輸入法屏蔽；如果是看 input element 的 input，包括注音和還在選字狀態的都可以 log 出來，還會丟出來一個非常詳細的 object，一開始笨笨的一項一項比較，後來才發現應該有文件可以看：MDN | HTMLElement: input event  BTW monkeytype 沒有中文 quote 的模式，其他我看的幾個網站都是整行或段打完按下 Enter 才做檢查。能做出來的話應該有料吧？\n",
+  "wordCount" : "48",
+  "inLanguage": "zh-hant",
+  "datePublished": "2023-10-20T17:19:58+08:00",
+  "dateModified": "2023-10-20T17:19:58+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "blo.blo.blog"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kkkeevvvin.github.io/my-website-ver1/docs/posts/chinese-ime/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "blo.blo.blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://img.icons8.com/cotton/512/000000/sun--v3.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://kkkeevvvin.github.io/my-website-ver1/docs" accesskey="h" title="blo.blo.blog (Alt + H)">blo.blo.blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/archives" title="文章列表">
+                    <span>文章列表</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/categories/" title="分類">
+                    <span>分類</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/" title="標籤">
+                    <span>標籤</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/search" title="搜尋">
+                    <span>搜尋</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://kkkeevvvin.github.io/my-website-ver1/docs/about" title="關於我">
+                    <span>關於我</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://kkkeevvvin.github.io/my-website-ver1/docs">Home</a>&nbsp;»&nbsp;<a href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/">Posts</a></div>
+    <h1 class="post-title">
+      [隨筆] 中文輸入法好難
+    </h1>
+    <div class="post-meta">October 20, 2023&nbsp;·&nbsp;1 min&nbsp;·&nbsp;blo.blo.blog
+</div>
+  </header> 
+
+  <div class="post-content"><p>繼續關於打字練習網站的 project，今日進度：</p>
+<ul>
+<li>精簡計時器的變數，改用一次性的 EventListener 來啟動</li>
+<li>將段落產生獨立成 module</li>
+<li>把名言佳句放到 json 檔中</li>
+<li>調整程式架構，減少 main.js 中複雜的 function</li>
+<li>中文輸入法令人頭疼</li>
+</ul>
+<p>又是感覺花了很多時間，但沒做什麼的一天&hellip;</p>
+<p>&hellip;</p>
+<p>輸入法引擎/編輯器：Input Method Engine/Editor</p>
+<p>&hellip;</p>
+<p>因為我用的中文輸入法是注音，會有需要選字的情況。</p>
+<p>如果太早做檢查，看到有符合的字就先清空輸入暫存，就 highlight 下一個字的話，再輸入下一個字時，前一個還在選字狀態的字會冒出來。</p>
+<p>嘗試用 EventListener 去檢查 keypress，發現打字完選字再按下 Enter，這段期間都會被輸入法屏蔽；如果是看 input element 的 input，包括注音和還在選字狀態的都可以 log 出來，還會丟出來一個非常詳細的 object，一開始笨笨的一項一項比較，後來才發現應該有文件可以看：<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"
+   
+   
+   target="_blank"rel="noopener">
+    MDN | HTMLElement: input event
+
+</a>
+
+</p>
+<p>BTW monkeytype 沒有中文 quote 的模式，其他我看的幾個網站都是整行或段打完按下 Enter 才做檢查。能做出來的話應該有料吧？</p>
+
+
+    
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/kkkevin/button?referrer=https%3a%2f%2fkkkeevvvin.github.io%2fmy-website-ver1%2fdocs%2fposts%2fchinese-ime%2f" width="100%" frameborder=0></iframe>
+
+  </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/ime/">IME</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/javascript/">JavaScript</a></li>
+      <li><a href="https://kkkeevvvin.github.io/my-website-ver1/docs/tags/eventlistener/">EventListener</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://kkkeevvvin.github.io/my-website-ver1/docs/posts/about-typing-test/">
+    <span class="title"> »</span>
+    <br>
+    <span>[隨筆]關於打字練習網站</span>
+  </a>
+</nav>
+
+    
+    
+        <div id="graphcomment"></div>
+<script type="text/javascript">
+
+   
+
+  var __semio__params = {
+    graphcommentId: "blobloblog", 
+
+    behaviour: {
+      
+      uid: "/my-website-ver1/docs/posts/chinese-ime/", 
+      telemetricThroughCmp: true
+    },
+
+    
+
+  }
+
+   
+
+  function __semio__onload() {
+    __semio__gc_graphlogin(__semio__params)
+  }
+
+
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.onload = __semio__onload; gc.defer = true; gc.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+
+
+</script>
+
+    
+
+
+  </footer>
+
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2023 <a href="https://kkkeevvvin.github.io/my-website-ver1/docs">blo.blo.blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onclick = function () {
+      
+    }
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
